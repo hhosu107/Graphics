@@ -1,0 +1,19 @@
+# CMake generation dependency list for this directory.
+D:/Gits/Graphics/Week2/ExternalProjects/glfw-3.0.3/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindOpenGL.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/CheckIncludeFile.c.in
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindDoxygen.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.11/Modules/FindPackageMessage.cmake
+D:/Gits/Graphics/Week2/ExternalProjects/glfw-3.0.3/docs/Doxyfile.in
+D:/Gits/Graphics/Week2/ExternalProjects/glfw-3.0.3/src/config.h.in
+D:/Gits/Graphics/Week2/ExternalProjects/glfw-3.0.3/src/glfwConfig.cmake.in
+D:/Gits/Graphics/Week2/ExternalProjects/glfw-3.0.3/src/glfwConfigVersion.cmake.in

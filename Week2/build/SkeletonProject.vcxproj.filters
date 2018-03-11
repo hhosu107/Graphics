@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Gits\Graphics\Week2\Skeleton\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Gits\Graphics\Week2\common\shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Gits\Graphics\Week2\common\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Gits\Graphics\Week2\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Gits\Graphics\Week2\Skeleton\TransformVertexShader.glsl" />
+    <None Include="D:\Gits\Graphics\Week2\Skeleton\ColorFragmentShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{60467D55-2F22-3FB8-9929-81D8E161E682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{DE65F6DF-A7BB-3E90-A7CC-7E7C081A096D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+﻿  Building Custom Rule D:/Gits/Graphics/Week2/CMakeLists.txt
+  CMake does not need to re-run because D:/Gits/Graphics/Week2/build/CMakeFiles/generate.stamp is up-to-date.
+  main.cpp
+  shader.cpp
+d:\gits\graphics\week2\externalprojects\glm-0.9.4.0\glm\./core/func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss (compiling source file D:\Gits\Graphics\Week2\Skeleton\main.cpp)
+d:\gits\graphics\week2\externalprojects\glm-0.9.4.0\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss (compiling source file D:\Gits\Graphics\Week2\Skeleton\main.cpp)
+d:\gits\graphics\week2\externalprojects\glm-0.9.4.0\glm\./core/func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss (compiling source file D:\Gits\Graphics\Week2\Skeleton\main.cpp)
+D:\Gits\Graphics\Week2\Skeleton\main.cpp(290): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  SkeletonProject.vcxproj -> D:\Gits\Graphics\Week2\build\Release\SkeletonProject.exe

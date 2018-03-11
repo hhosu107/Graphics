@@ -1,0 +1,6 @@
+D:/Gits/Graphics/Week2/build/CMakeFiles/SkeletonProject.dir
+D:/Gits/Graphics/Week2/build/CMakeFiles/ALL_BUILD.dir
+D:/Gits/Graphics/Week2/build/CMakeFiles/ZERO_CHECK.dir
+D:/Gits/Graphics/Week2/build/ExternalProjects/CMakeFiles/GLEW_190.dir
+D:/Gits/Graphics/Week2/build/ExternalProjects/glfw-3.0.3/CMakeFiles/ALL_BUILD.dir
+D:/Gits/Graphics/Week2/build/ExternalProjects/glfw-3.0.3/src/CMakeFiles/GLFW_303.dir

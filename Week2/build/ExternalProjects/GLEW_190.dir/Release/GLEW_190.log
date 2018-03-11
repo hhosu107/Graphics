@@ -1,0 +1,4 @@
+﻿  Building Custom Rule D:/Gits/Graphics/Week2/ExternalProjects/CMakeLists.txt
+  CMake does not need to re-run because D:/Gits/Graphics/Week2/build/ExternalProjects/CMakeFiles/generate.stamp is up-to-date.
+  glew.c
+  GLEW_190.vcxproj -> D:\Gits\Graphics\Week2\build\ExternalProjects\Release\GLEW_190.lib
