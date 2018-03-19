@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\clipboard.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\context.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\gamma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\input.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\joystick.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\monitor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_clipboard.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_gamma.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_joystick.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_monitor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_time.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\wgl_context.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Gits\Graphics\HW1\build\ExternalProjects\glfw-3.0.3\src\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\include\GLFW\glfw3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\include\GLFW\glfw3native.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\win32_platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\wgl_platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Gits\Graphics\HW1\ExternalProjects\glfw-3.0.3\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8732DE63-B9E5-3838-BF8C-57E35A9900F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8BBFEB6F-6838-3FF7-BD22-ECC5BDC7B88C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

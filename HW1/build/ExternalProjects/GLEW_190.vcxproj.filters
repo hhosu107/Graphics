@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Gits\Graphics\HW1\ExternalProjects\glew-1.9.0\src\glew.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Gits\Graphics\HW1\ExternalProjects\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8BBFEB6F-6838-3FF7-BD22-ECC5BDC7B88C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
