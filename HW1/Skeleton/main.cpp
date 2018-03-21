@@ -203,6 +203,7 @@ void traverse(int i) {
 	if (i < 0 || i >= g_models.size()) return;
 	model_view_stack.push_back(model_view);
 	g_model_rbts[i] = get_translation(g_model_rbts[i]) * rotate(mat4(1.0f), (currentTime - lastTime)*g_model_rotation_speed[i], vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_model_rbts[i]) ;
+	// Auxiliary frame: TODO
 	mat4 temp_model_view = model_view * get_translation(g_model_rbts[i]) * get_linear(g_model_rbts[i]);
 	// Draw line btwn parent and child first. If the node is the root, then the line will starts from the origin point.
 	Model line = Model();
