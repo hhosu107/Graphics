@@ -31,6 +31,7 @@
   <ItemGroup>
     <None Include="E:\Gits\Graphics\HW1\Skeleton\VertexShader.glsl" />
     <None Include="E:\Gits\Graphics\HW1\Skeleton\FragmentShader.glsl" />
+    <None Include="..\Skeleton\LineFragmentShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

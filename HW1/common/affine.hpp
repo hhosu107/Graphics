@@ -15,7 +15,7 @@ using namespace glm;
 // output: L (4 x 4 matrix)
 inline mat4 get_linear(mat4 a_A)
 {
-	mat4 L = translate(mat4(1.0f), vec3(a_A[3]));
+	mat4 L = mat4(a_A[0], a_A[1], a_A[2], vec4(0.0f, 0.0f, 0.0f, 1.0f));
 	return L;
 }
 
@@ -24,7 +24,7 @@ inline mat4 get_linear(mat4 a_A)
 // output: T (4 x 4 matrix)
 inline mat4 get_translation(mat4 a_A)
 {
-	mat4 T = mat4(a_A[0], a_A[1], a_A[2], vec4(0.0f, 0.0f, 0.0f, 1.0f));
+	mat4 T = translate(mat4(1.0f), vec3(a_A[3]));
 	return T;
 }
 #endif

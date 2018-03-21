@@ -10,7 +10,8 @@ using namespace glm;
 
 enum DRAW_TYPE {
 	ARRAY,
-	INDEX
+	INDEX,
+	LINE
 };
 
 class Model {
@@ -56,6 +57,7 @@ public:
 	void SetEyeRbt(mat4* p_eye_rbt);
 	// Set pointer of model matrix for this model
 	void SetModelRbt(mat4* p_model_rbt);
+	void PrintModelRbt();
 	// Set directional light vector for model
 	void SetDirectionalLight(vec3 a_dir_light);
 	// Set a shader program for this model and transfer data which stored in m_vertices, m_normals, m_colors, (m_indices are optional)

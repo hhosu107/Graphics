@@ -3,6 +3,7 @@
 
 #include "model.hpp"
 #include "shader.hpp"
+#include <glm/gtx/string_cast.hpp>
 
 using namespace std;
 using namespace glm;
@@ -64,6 +65,11 @@ void Model::SetEyeRbt(mat4* p_eye_rbt)
 void Model::SetModelRbt(mat4* p_model_rbt)
 {
 	m_model_rbt = p_model_rbt;
+}
+
+void Model::PrintModelRbt()
+{
+	std::cout << glm::to_string(*m_model_rbt) << endl;
 }
 
 void Model::SetDirectionalLight(vec3 a_dir_light)
@@ -128,7 +134,10 @@ void Model::Draw()
 	{
 		glDrawArrays(GL_TRIANGLES, 0, (GLsizei) m_positions.size());
 	}
-	else {
+	else if(m_draw_type == DRAW_TYPE::LINE){
+		glDrawArrays(GL_LINES, 0, (GLsizei)m_positions.size());
+	}
+	else{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_index_buffer_id);
 		glDrawElements(GL_TRIANGLES, (GLsizei) m_indices.size(), GL_UNSIGNED_INT, ((GLvoid *)0));
 	}
