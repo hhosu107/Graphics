@@ -34,16 +34,17 @@ float g_fov = 45.f; // 45-degree of fov
 float g_fovy = g_fov; // y-angle of fov
 
 std::vector<Model> g_models;
-std::vector<mat4> g_model_rbts; // 4. Implement hierarchical frames: will contain the relative transform when initialized.
-std::vector<float> g_model_rotation_speed; // 5. Rotation speed.
-mat4 model_view;
-std::vector<mat4> model_view_stack; // 4. Implement hierarchical frames: using model_view_stack.end() * (g_model_rbts = g_model_rbts[i] * rotation(g_model_rotation_speed * (1 / fps))), do model_view_stack.push_back().
+std::vector<mat4> g_model_rbts; // 4. Implement hierarchical frames: g_model_rbts[2i+1] and g_model_rbts[2i+2] will contain the relative transform from g_model_rbts[i]; except g_model_rbts[0]: relative transform from g_world_rbt.
+std::vector<float> g_model_rotation_speed; // 5. Auxiliary Rotation speed.
+mat4 model_view; // 5. Temporal variable when the rotation applied onto each node.
+std::vector<mat4> model_view_stack; // 5. Object manipulation according to the hierarchy: using model_view_stack.end() * (g_model_rbts = g_model_rbts[i] * rotation(g_model_rotation_speed * (1 / fps))), do model_view_stack.push_back().
 
 bool pickObject = false; // 5. Controls whether or not the object can be picked by 'o' command
 int rot_ptr; // 5. Index for the current rotation manipulation. If pickObject is false, it shouldn't be changed even if we select 'o' command
+
 vec3 dir_light = vec3(0.0f, -1.0f, 1.0f); // Pull out the directional light
 
-
+// 5. Implement a counter for a constant-speed rotation
 float lastTime; // saves the current time
 float currentTime;
 
@@ -90,9 +91,11 @@ void CleanUp()
 	g_model_rbts.clear();
 	g_model_rbts.shrink_to_fit();
 
+	// 5. Object manipulation
 	g_model_rotation_speed.clear();
 	g_model_rotation_speed.shrink_to_fit();
 
+	// 5. Object manipulation
 	model_view_stack.clear();
 	model_view_stack.shrink_to_fit();
 }
@@ -199,13 +202,22 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 	}
 }
 
+/* 4. Implement mobile using binary tree implementation.
+ * Since I finished placing them, I can access childs from g_models[i] using g_models[2*i+1] and g_models[2*i+2].
+ * By accessing them, I can compute the distance before the rotation starts.
+ * Traversal for rotation: BFS (pressing 'o' increases the index by 1).
+ * Traversal for applying rotation: DFS
+ */
+// 5. Object manipulation according to the hierarchy
 void traverse(int i) {
 	if (i < 0 || i >= g_models.size()) return;
 	model_view_stack.push_back(model_view);
+	// 5. apply local transformation (will affect to descendants)
 	g_model_rbts[i] = get_translation(g_model_rbts[i]) * rotate(mat4(1.0f), (currentTime - lastTime)*g_model_rotation_speed[i], vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_model_rbts[i]) ;
-	// Auxiliary frame: TODO
+	// 5. apply global (from ascendants) transformation
 	mat4 temp_model_view = model_view * get_translation(g_model_rbts[i]) * get_linear(g_model_rbts[i]);
-	// Draw line btwn parent and child first. If the node is the root, then the line will starts from the origin point.
+
+	// Draw a line btwn parent and child first. If the node is the root, then the line will starts from the origin point.
 	Model line = Model();
 	Line(line, vec3(model_view[3]), vec3(temp_model_view[3]));
 	line.InitializeGLSL(DRAW_TYPE::LINE, "VertexShader.glsl", "LineFragmentShader.glsl");
@@ -223,8 +235,9 @@ void traverse(int i) {
 	mat4 temp_g_model_rbt = g_model_rbts[i];
 	
 	g_model_rbts[i] = model_view;
-	g_models[i].SetModelRbt(&g_model_rbts[i]);
+	g_models[i].SetModelRbt(&g_model_rbts[i]); // apply the global effect temporarily
 
+	// for the selected object, draw it with lines
 	if (pickObject && i == rot_ptr) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		g_models[i].Draw();
@@ -232,8 +245,9 @@ void traverse(int i) {
 	}
 	else
 		g_models[i].Draw();
-	g_model_rbts[i] = temp_g_model_rbt;
+	g_model_rbts[i] = temp_g_model_rbt; // revert the global effect temporarily
 	
+	// go to the direct children
 	if (2 * i + 1 < g_models.size()) traverse(2 * i + 1);
 	if (2 * i + 2 < g_models.size()) traverse(2 * i + 2);
 	model_view = model_view_stack.back();
@@ -311,7 +325,7 @@ int main( void )
 
 	int model_count = 0;
 
-	// 2. Using other primitives
+	// 2. Make several primitives
 	Model first_knot = Model();
 	InitDataKnot(first_knot, vec3(1.0f, 1.0f, 1.0f)); // Pure infinity
 	first_knot.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
@@ -320,7 +334,7 @@ int main( void )
 
 	mat4 first_knot_rbt = translate(g_world_rbt, vec3(0.0f, 1.0f, 0.0f));
 	g_model_rbts.push_back(first_knot_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	first_knot.SetModelRbt(&g_model_rbts[model_count++]);
 	first_knot.SetDirectionalLight(dir_light);
 
@@ -334,7 +348,7 @@ int main( void )
 
 	mat4 pyramid_rbt = translate(g_world_rbt, vec3(-3.0f, -3.0f, 0.0f));
 	g_model_rbts.push_back(pyramid_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	pyramid.SetModelRbt(&g_model_rbts[model_count++]);
 	pyramid.SetDirectionalLight(dir_light);
 
@@ -349,7 +363,7 @@ int main( void )
 
 	mat4 cube_rbt = translate(g_world_rbt, vec3(3.0f, -3.0f, 0.0f));
 	g_model_rbts.push_back(cube_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	cube.SetModelRbt(&g_model_rbts[model_count++]);
 	cube.SetDirectionalLight(dir_light);
 
@@ -363,13 +377,11 @@ int main( void )
 
 	mat4 another_cube_rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 75.0f, normalize(vec3(0.4f, 0.8f, 0.6f)));
 	g_model_rbts.push_back(another_cube_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	another_cube.SetModelRbt(&g_model_rbts[model_count++]);
 	another_cube.SetDirectionalLight(dir_light);
 
 	g_models.push_back(another_cube);
-
-	// 2. test another model
 
 	Model knot = Model();
 	InitDataKnot(knot, vec3(0.5f, 0.5f, 0.0f)); // An hourglass
@@ -377,9 +389,9 @@ int main( void )
 	knot.SetProjection(&g_projection);
 	knot.SetEyeRbt(&g_eye_rbt);
 
-	mat4 knot_rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f));
+	mat4 knot_rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f)); // An hourglass
 	g_model_rbts.push_back(knot_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	knot.SetModelRbt(&g_model_rbts[model_count++]);
 	knot.SetDirectionalLight(dir_light);
 
@@ -393,18 +405,11 @@ int main( void )
 
 	mat4 another_knot_rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f));
 	g_model_rbts.push_back(another_knot_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	another_knot.SetModelRbt(&g_model_rbts[model_count++]);
 	another_knot.SetDirectionalLight(dir_light);
 
 	g_models.push_back(another_knot);
-
-	/* 4. Implement mobile using binary tree implementation.
-	Since I finished placing them, I can access childs from g_models[i] using g_models[2*i+1] and g_models[2*i+2].
-	By accessing them, I can compute the distance before the rotation starts.
-	Traversal for rotation: BFS (pressing 'o' increases the index by 1).
-	Traversal for applying rotation: DFS
-	*/
 
 	Model another_pyramid = Model();
 	InitDataPyramid(another_pyramid, vec3(0.0f, 0.750f, 1.0f));  // The color of the guide stone from "The Legend of Zelda: Breath of the Wild"
@@ -414,7 +419,7 @@ int main( void )
 
 	mat4 another_pyramid_rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 180.0f, vec3(1.0f, 0.0f, 0.0f));
 	g_model_rbts.push_back(another_pyramid_rbt);
-	g_model_rotation_speed.push_back(0);
+	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	another_pyramid.SetModelRbt(&g_model_rbts[model_count++]);
 	another_pyramid.SetDirectionalLight(dir_light);
 
@@ -428,7 +433,7 @@ int main( void )
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		currentTime = (float)glfwGetTime();
-		g_world_rbt = g_world_rbt * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_x, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_z, vec3(0.0f, 0.0f, 1.0f)); // the world spins
+		g_world_rbt = g_world_rbt * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_x, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_z, vec3(0.0f, 0.0f, 1.0f)); // 7. Creativity: the world spins
 
 		model_view = g_world_rbt;
 		
