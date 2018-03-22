@@ -22,6 +22,7 @@
 using namespace std;
 using namespace glm;
 
+
 #define DEBUG 1
 
 // Global variable
@@ -33,11 +34,14 @@ int g_framebuffer_height = 768;
 float g_fov = 45.f; // 45-degree of fov
 float g_fovy = g_fov; // y-angle of fov
 
-std::vector<Model> g_models;
-std::vector<mat4> g_model_rbts; // 4. Implement hierarchical frames: g_model_rbts[2i+1] and g_model_rbts[2i+2] will contain the relative transform from g_model_rbts[i]; except g_model_rbts[0]: relative transform from g_world_rbt.
-std::vector<float> g_model_rotation_speed; // 5. Auxiliary Rotation speed.
-mat4 model_view; // 5. Temporal variable when the rotation applied onto each node.
-std::vector<mat4> model_view_stack; // 5. Object manipulation according to the hierarchy: using model_view_stack.end() * (g_model_rbts = g_model_rbts[i] * rotation(g_model_rotation_speed * (1 / fps))), do model_view_stack.push_back().
+struct ModelRbt {
+	Model model;
+	mat4 rbt;
+	float rotation_speed;
+};
+std::vector<ModelRbt> g_models;				// 4. Implement hierarchical frames: g_models[2i+1].rbt and g_models[2i+2].rbt will contain the relative transform from g_models[i].rbt; except g_models[0].rbt: relative transform from g_world_rbt.
+mat4 model_view;							// 5. Temporal variable when the rotation applied onto each node.
+std::vector<mat4> model_view_stack;			// 5. Object manipulation according to the hierarchy.
 
 bool pickObject = false; // 5. Controls whether or not the object can be picked by 'o' command
 int rot_ptr; // 5. Index for the current rotation manipulation. If pickObject is false, it shouldn't be changed even if we select 'o' command
@@ -83,17 +87,10 @@ void CleanUp()
 {
 	for (int i = 0; i < g_models.size(); i++)
 	{
-		g_models[i].CleanUp();
+		g_models[i].model.CleanUp();
 	}
 	g_models.clear();
 	g_models.shrink_to_fit();
-
-	g_model_rbts.clear();
-	g_model_rbts.shrink_to_fit();
-
-	// 5. Object manipulation
-	g_model_rotation_speed.clear();
-	g_model_rotation_speed.shrink_to_fit();
 
 	// 5. Object manipulation
 	model_view_stack.clear();
@@ -165,17 +162,17 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			break;
 		case GLFW_KEY_N:
 			if (pickObject) {
-				g_model_rotation_speed[rot_ptr] -= 10;
+				g_models[rot_ptr].rotation_speed -= 10;
 			}
 			break;
 		case GLFW_KEY_M:
 			if (pickObject) {
-				g_model_rotation_speed[rot_ptr] += 10;
+				g_models[rot_ptr].rotation_speed += 10;
 			}
 			break;
 		case GLFW_KEY_R:
 			if (pickObject) {
-				g_model_rotation_speed[rot_ptr] = 0;
+				g_models[rot_ptr].rotation_speed = 0;
 			}
 			break;
 		case GLFW_KEY_J:
@@ -213,9 +210,9 @@ void traverse(int i) {
 	if (i < 0 || i >= g_models.size()) return;
 	model_view_stack.push_back(model_view);
 	// 5. apply local transformation (will affect to descendants)
-	g_model_rbts[i] = get_translation(g_model_rbts[i]) * rotate(mat4(1.0f), (currentTime - lastTime)*g_model_rotation_speed[i], vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_model_rbts[i]) ;
+	g_models[i].rbt = get_translation(g_models[i].rbt) * rotate(mat4(1.0f), (currentTime - lastTime)*g_models[i].rotation_speed, vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_models[i].rbt) ;
 	// 5. apply global (from ascendants) transformation
-	mat4 temp_model_view = model_view * get_translation(g_model_rbts[i]) * get_linear(g_model_rbts[i]);
+	mat4 temp_model_view = model_view * get_translation(g_models[i].rbt) * get_linear(g_models[i].rbt);
 
 	// Draw a line btwn parent and child first. If the node is the root, then the line will starts from the origin point.
 	Model line = Model();
@@ -232,20 +229,20 @@ void traverse(int i) {
 	// Line draw end
 	
 	model_view = temp_model_view;
-	mat4 temp_g_model_rbt = g_model_rbts[i];
+	mat4 temp_g_model_rbt = g_models[i].rbt;
 	
-	g_model_rbts[i] = model_view;
-	g_models[i].SetModelRbt(&g_model_rbts[i]); // apply the global effect temporarily
+	g_models[i].rbt = model_view;
+	g_models[i].model.SetModelRbt(&g_models[i].rbt); // apply the global effect temporarily
 
 	// for the selected object, draw it with lines
 	if (pickObject && i == rot_ptr) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		g_models[i].Draw();
+		g_models[i].model.Draw();
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 	}
 	else
-		g_models[i].Draw();
-	g_model_rbts[i] = temp_g_model_rbt; // revert the global effect temporarily
+		g_models[i].model.Draw();
+	g_models[i].rbt = temp_g_model_rbt; // revert the global effect temporarily
 	
 	// go to the direct children
 	if (2 * i + 1 < g_models.size()) traverse(2 * i + 1);
@@ -316,114 +313,119 @@ int main( void )
 	g_eye_rbt = translate(mat4(1.0f), vec3(0.0, -1.0f, 15.0));
 
 	// initialize models
-	g_models = std::vector<Model>();
-	g_model_rbts = std::vector<mat4>();
-	g_model_rotation_speed = std::vector<float>(); // 5. Will contain the current rotation speed.
+//	g_models = std::vector<Model>();
+//	g_model_rbts = std::vector<mat4>();
+//	g_model_rotation_speed = std::vector<float>(); // 5. Will contain the current rotation speed.
 
 	// initialize directional light
 	dir_light = vec3(0.0f, -1.0f, 1.0f);
 
 	int model_count = 0;
 
+	g_models = std::vector<ModelRbt>(7);
+
 	// 2. Make several primitives
-	Model first_knot = Model();
-	InitDataKnot(first_knot, vec3(1.0f, 1.0f, 1.0f)); // Pure infinity
-	first_knot.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	first_knot.SetProjection(&g_projection);
-	first_knot.SetEyeRbt(&g_eye_rbt);
 
-	mat4 first_knot_rbt = translate(g_world_rbt, vec3(0.0f, 1.0f, 0.0f));
-	g_model_rbts.push_back(first_knot_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	first_knot.SetModelRbt(&g_model_rbts[model_count++]);
-	first_knot.SetDirectionalLight(dir_light);
+	// Knot
+	g_models[0].model = Model();
+	InitDataKnot(g_models[0].model, vec3(1.0f, 1.0f, 1.0f)); // Pure infinity
+	(g_models[0].model).InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	(g_models[0].model).SetProjection(&g_projection);
+	(g_models[0].model).SetEyeRbt(&g_eye_rbt);
 
-	g_models.push_back(first_knot);
+	// mat4 first_knot_rbt = translate(g_world_rbt, vec3(0.0f, 1.0f, 0.0f));
+	g_models[0].rbt = translate(g_world_rbt, vec3(0.0f, 1.0f, 0.0f));
+	// g_model_rbts.push_back(first_knot_rbt);
+	// g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[0].rotation_speed = 0;
+	// first_knot.SetModelRbt(&g_model_rbts[model_count++]);
+	g_models[0].model.SetModelRbt(&g_models[0].rbt);
+	g_models[0].model.SetDirectionalLight(dir_light);
 
-	Model pyramid = Model();
-	InitDataPyramid(pyramid, vec3(0.776f, 0.541f, 0.071f)); // The color of the pyramid
-	pyramid.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	pyramid.SetProjection(&g_projection);
-	pyramid.SetEyeRbt(&g_eye_rbt);
+	// Pyramid
+	g_models[1].model = Model();
+	InitDataPyramid(g_models[1].model, vec3(0.776f, 0.541f, 0.071f)); // The color of the pyramid
+	g_models[1].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[1].model.SetProjection(&g_projection);
+	g_models[1].model.SetEyeRbt(&g_eye_rbt);
 
-	mat4 pyramid_rbt = translate(g_world_rbt, vec3(-3.0f, -3.0f, 0.0f));
-	g_model_rbts.push_back(pyramid_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	pyramid.SetModelRbt(&g_model_rbts[model_count++]);
-	pyramid.SetDirectionalLight(dir_light);
+	g_models[1].rbt = translate(g_world_rbt, vec3(-3.0f, -3.0f, 0.0f));
+//	g_model_rbts.push_back(pyramid_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[1].rotation_speed = 0;
+	g_models[1].model.SetModelRbt(&g_models[1].rbt);
+	g_models[1].model.SetDirectionalLight(dir_light);
 
-	g_models.push_back(pyramid);
+	// octahedron
+	g_models[2].model = Model();
+	vec3 octaColor[8] = {vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f)}; // colorful octa
+	InitDataOcta(g_models[2].model, octaColor);
+	g_models[2].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[2].model.SetProjection(&g_projection);
+	g_models[2].model.SetEyeRbt(&g_eye_rbt);
 
-	Model cube = Model();
-	vec3 cubeColor[6] = { vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 1.0f) }; // colorful cube
-	InitDataRubic(cube, cubeColor);
-	cube.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	cube.SetProjection(&g_projection);
-	cube.SetEyeRbt(&g_eye_rbt);
+	g_models[2].rbt = translate(g_world_rbt, vec3(3.0f, -3.0f, 0.0f));
+//	g_model_rbts.push_back(octa_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[2].rotation_speed = 0;
+	g_models[2].model.SetModelRbt(&g_models[2].rbt);
+	g_models[2].model.SetDirectionalLight(dir_light);
 
-	mat4 cube_rbt = translate(g_world_rbt, vec3(3.0f, -3.0f, 0.0f));
-	g_model_rbts.push_back(cube_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	cube.SetModelRbt(&g_model_rbts[model_count++]);
-	cube.SetDirectionalLight(dir_light);
+	// tilted cube
+	g_models[3].model = Model();
+	InitDataCube(g_models[3].model, vec3(0.03f, 0.03f, 0.03f)); // Black tilted control console
+	g_models[3].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[3].model.SetProjection(&g_projection);
+	g_models[3].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models.push_back(cube);
-	
-	Model another_cube = Model();
-	InitDataCube(another_cube, vec3(0.03f, 0.03f, 0.03f)); // Black tilted control console
-	another_cube.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	another_cube.SetProjection(&g_projection);
-	another_cube.SetEyeRbt(&g_eye_rbt);
+	g_models[3].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 75.0f, normalize(vec3(0.4f, 0.8f, 0.6f)));
+//	g_model_rbts.push_back(another_cube_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[3].rotation_speed = 0;
+	g_models[3].model.SetModelRbt(&g_models[3].rbt);
+	g_models[3].model.SetDirectionalLight(dir_light);
 
-	mat4 another_cube_rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 75.0f, normalize(vec3(0.4f, 0.8f, 0.6f)));
-	g_model_rbts.push_back(another_cube_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	another_cube.SetModelRbt(&g_model_rbts[model_count++]);
-	another_cube.SetDirectionalLight(dir_light);
+	// hourglass
+	g_models[4].model = Model();
+	InitDataKnot(g_models[4].model, vec3(0.5f, 0.5f, 0.0f)); // An hourglass
+	g_models[4].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[4].model.SetProjection(&g_projection);
+	g_models[4].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models.push_back(another_cube);
+	g_models[4].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f)); // An hourglass
+//	g_model_rbts.push_back(knot_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[4].rotation_speed = 0;
+	g_models[4].model.SetModelRbt(&g_models[4].rbt);
+	g_models[4].model.SetDirectionalLight(dir_light);
 
-	Model knot = Model();
-	InitDataKnot(knot, vec3(0.5f, 0.5f, 0.0f)); // An hourglass
-	knot.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	knot.SetProjection(&g_projection);
-	knot.SetEyeRbt(&g_eye_rbt);
+	// VS 2015
+	g_models[5].model = Model();
+	InitDataKnot(g_models[5].model, vec3(0.408f, 0.129f, 0.478f)); // The color of the logo from "Visual Studio 2015"
+	g_models[5].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[5].model.SetProjection(&g_projection);
+	g_models[5].model.SetEyeRbt(&g_eye_rbt);
 
-	mat4 knot_rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f)); // An hourglass
-	g_model_rbts.push_back(knot_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	knot.SetModelRbt(&g_model_rbts[model_count++]);
-	knot.SetDirectionalLight(dir_light);
+	g_models[5].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f));
+//	g_model_rbts.push_back(another_knot_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[5].rotation_speed = 0;
+	g_models[5].model.SetModelRbt(&g_models[5].rbt);
+	g_models[5].model.SetDirectionalLight(dir_light);
 
-	g_models.push_back(knot);
+	// inverted pyramid
+	g_models[6].model = Model();
+	InitDataPyramid(g_models[6].model, vec3(0.0f, 0.750f, 1.0f));  // The color of the guide stone from "The Legend of Zelda: Breath of the Wild"
+	g_models[6].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
+	g_models[6].model.SetProjection(&g_projection);
+	g_models[6].model.SetEyeRbt(&g_eye_rbt);
 
-	Model another_knot = Model();
-	InitDataKnot(another_knot, vec3(0.408f, 0.129f, 0.478f)); // The color of the logo from "Visual Studio 2015"
-	another_knot.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	another_knot.SetProjection(&g_projection);
-	another_knot.SetEyeRbt(&g_eye_rbt);
-
-	mat4 another_knot_rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f));
-	g_model_rbts.push_back(another_knot_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	another_knot.SetModelRbt(&g_model_rbts[model_count++]);
-	another_knot.SetDirectionalLight(dir_light);
-
-	g_models.push_back(another_knot);
-
-	Model another_pyramid = Model();
-	InitDataPyramid(another_pyramid, vec3(0.0f, 0.750f, 1.0f));  // The color of the guide stone from "The Legend of Zelda: Breath of the Wild"
-	another_pyramid.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
-	another_pyramid.SetProjection(&g_projection);
-	another_pyramid.SetEyeRbt(&g_eye_rbt);
-
-	mat4 another_pyramid_rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 180.0f, vec3(1.0f, 0.0f, 0.0f));
-	g_model_rbts.push_back(another_pyramid_rbt);
-	g_model_rotation_speed.push_back(0); // Initial rotation speed
-	another_pyramid.SetModelRbt(&g_model_rbts[model_count++]);
-	another_pyramid.SetDirectionalLight(dir_light);
-
-	g_models.push_back(another_pyramid);
+	g_models[6].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 180.0f, vec3(1.0f, 0.0f, 0.0f));
+//	g_model_rbts.push_back(another_pyramid_rbt);
+//	g_model_rotation_speed.push_back(0); // Initial rotation speed
+	g_models[6].rotation_speed = 0;
+	g_models[6].model.SetModelRbt(&g_models[6].rbt);
+	g_models[6].model.SetDirectionalLight(dir_light);
 
 	lastTime = (float)glfwGetTime();
 	do{

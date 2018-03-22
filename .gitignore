@@ -40,4 +40,15 @@
 *.vcxproj
 *.cache
 *.db
+*.aux
+*.nav
+*.log
+*.out
+*.synctex.gz
+*.snm
+*.svg
+*-eps-converted-to.pdf
+*.bbl
+*.blg
+*.pdf
 
