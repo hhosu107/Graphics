@@ -235,6 +235,7 @@ However, there is one problem: about the line from a parent node to a child node
 	\end{center}
 	\caption{Line 220-230: To eliminate Linking messages (\text{"compiling shader"}, \text{"Linking program"}), I used another fragment shader for lines: see \texttt{shader.cpp}.}
 \end{figure}
+\newpage
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[width=0.9\linewidth]{temporalAbsoluteTransformation.png}
@@ -248,6 +249,7 @@ When we actually draw an object, note that my \texttt{g\_models[i].rbt} contains
 	\end{center}
 	\caption{Line 240-246: Draw an object with the wireframe if it is selected to be manipulated.}
 \end{figure}
+
 To indicate what node is selected, I used two variables. One is for indicating whether or not we actually select the node; the other one is for indicating which node we select. I will introduce them in chaper 5.
 
 \section{Implementation for Keyboard Callbacks} \label{sec:5}
@@ -322,6 +324,10 @@ To control the rotation speed, I mapped additional keyboard inputs. You can see 
 	\end{center}
 	\caption{Commands how to control the world spin speed.}
 \end{figure}
+
+\section{How to change sources}
+In the zip, there are two folders (\texttt{common, skeleton}) containing source codes. Note that I also added \texttt{LineFragmentShader.glsl}. \\
+And there are executable and this document. Hope to enjoy examining my executable.
 
 
 %\begin{proof}[Solution.]
