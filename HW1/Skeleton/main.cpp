@@ -58,7 +58,7 @@ mat4 g_projection;
 mat4 g_eye_rbt;
 // World model property
 mat4 g_world_rbt = mat4(1.0f);
-// 7. Creativity: Will rotate the world model property itself according to the x-axis
+// 7. Creativity: Will rotate the world model property itself according to the x-axis and the z-axis
 float g_world_rbt_rotation_speed_x = 0.0f;
 float g_world_rbt_rotation_speed_z = 0.0f;
 
@@ -158,20 +158,20 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			pickObject = !pickObject;
 			break;
 		case GLFW_KEY_O:
-			if (pickObject) rot_ptr = (rot_ptr + 1) % g_models.size();
+			if (pickObject) rot_ptr = (rot_ptr + 1) % g_models.size(); // BFS tracking
 			break;
 		case GLFW_KEY_N:
-			if (pickObject) {
+			if (pickObject) { // decrease rotation speed by 10deg/s for the selected one
 				g_models[rot_ptr].rotation_speed -= 10;
 			}
 			break;
 		case GLFW_KEY_M:
-			if (pickObject) {
+			if (pickObject) { // increase rotation speed by 10deg/s for the selected one
 				g_models[rot_ptr].rotation_speed += 10;
 			}
 			break;
 		case GLFW_KEY_R:
-			if (pickObject) {
+			if (pickObject) { // reset rotation speed by 0deg/s for the selected one
 				g_models[rot_ptr].rotation_speed = 0;
 			}
 			break;
@@ -210,9 +210,11 @@ void traverse(int i) {
 	if (i < 0 || i >= g_models.size()) return;
 	model_view_stack.push_back(model_view);
 	// 5. apply local transformation (will affect to descendants)
-	g_models[i].rbt = get_translation(g_models[i].rbt) * rotate(mat4(1.0f), (currentTime - lastTime)*g_models[i].rotation_speed, vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_models[i].rbt) ;
+	g_models[i].rbt = get_translation(g_models[i].rbt) * 
+		rotate(mat4(1.0f), (currentTime - lastTime)*g_models[i].rotation_speed, 
+			vec3(0.0f, 1.0f, 0.0f)) * get_linear(g_models[i].rbt) ;
 	// 5. apply global (from ascendants) transformation
-	mat4 temp_model_view = model_view * get_translation(g_models[i].rbt) * get_linear(g_models[i].rbt);
+	mat4 temp_model_view = model_view * g_models[i].rbt;
 
 	// Draw a line btwn parent and child first. If the node is the root, then the line will starts from the origin point.
 	Model line = Model();
@@ -328,7 +330,7 @@ int main( void )
 
 	// Knot
 	g_models[0].model = Model();
-	InitDataKnot(g_models[0].model, vec3(1.0f, 1.0f, 1.0f)); // Pure infinity
+	InitDataKnot(g_models[0].model, mat4(1.0f), vec3(1.0f, 1.0f, 1.0f)); // Pure infinity
 	(g_models[0].model).InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	(g_models[0].model).SetProjection(&g_projection);
 	(g_models[0].model).SetEyeRbt(&g_eye_rbt);
@@ -344,7 +346,7 @@ int main( void )
 
 	// Pyramid
 	g_models[1].model = Model();
-	InitDataPyramid(g_models[1].model, vec3(0.776f, 0.541f, 0.071f)); // The color of the pyramid
+	InitDataPyramid(g_models[1].model, mat4(1.0f), vec3(0.776f, 0.541f, 0.071f)); // The color of the pyramid
 	g_models[1].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[1].model.SetProjection(&g_projection);
 	g_models[1].model.SetEyeRbt(&g_eye_rbt);
@@ -358,8 +360,8 @@ int main( void )
 
 	// octahedron
 	g_models[2].model = Model();
-	vec3 octaColor[8] = {vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f)}; // colorful octa
-	InitDataOcta(g_models[2].model, octaColor);
+	vec3 octaColor[8] = {vec3(0.0f, 0.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f), vec3(0.0f, 0.0f, 1.0f), vec3(1.0f, 1.0f, 0.0f), vec3(1.0f, 0.0f, 1.0f), vec3(0.0f, 1.0f, 1.0f), vec3(1.0f, 1.0f, 1.0f)}; // colorful tilted octa
+	InitDataOcta(g_models[2].model, rotate(mat4(1.0f), 90.0f, normalize(vec3(0.0f, 1.0f, 1.0f))), octaColor);
 	g_models[2].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[2].model.SetProjection(&g_projection);
 	g_models[2].model.SetEyeRbt(&g_eye_rbt);
@@ -373,12 +375,12 @@ int main( void )
 
 	// tilted cube
 	g_models[3].model = Model();
-	InitDataCube(g_models[3].model, vec3(0.03f, 0.03f, 0.03f)); // Black tilted control console
+	InitDataCube(g_models[3].model, rotate(mat4(1.0f), 75.0f, normalize(vec3(0.4f, 0.8f, 0.6f))), vec3(0.03f, 0.03f, 0.03f)); // Black tilted control console
 	g_models[3].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[3].model.SetProjection(&g_projection);
 	g_models[3].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models[3].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 75.0f, normalize(vec3(0.4f, 0.8f, 0.6f)));
+	g_models[3].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f));
 //	g_model_rbts.push_back(another_cube_rbt);
 //	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	g_models[3].rotation_speed = 0;
@@ -387,12 +389,12 @@ int main( void )
 
 	// hourglass
 	g_models[4].model = Model();
-	InitDataKnot(g_models[4].model, vec3(0.5f, 0.5f, 0.0f)); // An hourglass
+	InitDataKnot(g_models[4].model, rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f)), vec3(0.5f, 0.5f, 0.0f)); // An hourglass
 	g_models[4].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[4].model.SetProjection(&g_projection);
 	g_models[4].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models[4].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(0.0f, 1.0f, 0.0f)); // An hourglass
+	g_models[4].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)); // An hourglass
 //	g_model_rbts.push_back(knot_rbt);
 //	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	g_models[4].rotation_speed = 0;
@@ -401,12 +403,12 @@ int main( void )
 
 	// VS 2015
 	g_models[5].model = Model();
-	InitDataKnot(g_models[5].model, vec3(0.408f, 0.129f, 0.478f)); // The color of the logo from "Visual Studio 2015"
+	InitDataKnot(g_models[5].model, rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f)), vec3(0.408f, 0.129f, 0.478f)); // The color of the logo from "Visual Studio 2015"
 	g_models[5].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[5].model.SetProjection(&g_projection);
 	g_models[5].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models[5].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 90.0f, vec3(1.0f, 0.0f, 0.0f));
+	g_models[5].rbt = translate(g_world_rbt, vec3(-1.5f, -2.0f, 0.0f));
 //	g_model_rbts.push_back(another_knot_rbt);
 //	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	g_models[5].rotation_speed = 0;
@@ -415,12 +417,12 @@ int main( void )
 
 	// inverted pyramid
 	g_models[6].model = Model();
-	InitDataPyramid(g_models[6].model, vec3(0.0f, 0.750f, 1.0f));  // The color of the guide stone from "The Legend of Zelda: Breath of the Wild"
+	InitDataPyramid(g_models[6].model, rotate(mat4(1.0f), 180.0f, vec3(1.0f, 0.0f, 0.0f)), vec3(0.0f, 0.750f, 1.0f));  // The color of the guide stone from "The Legend of Zelda: Breath of the Wild"
 	g_models[6].model.InitializeGLSL(DRAW_TYPE::ARRAY, "VertexShader.glsl", "FragmentShader.glsl");
 	g_models[6].model.SetProjection(&g_projection);
 	g_models[6].model.SetEyeRbt(&g_eye_rbt);
 
-	g_models[6].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f)) * rotate(mat4(1.0f), 180.0f, vec3(1.0f, 0.0f, 0.0f));
+	g_models[6].rbt = translate(g_world_rbt, vec3(1.5f, -2.0f, 0.0f));
 //	g_model_rbts.push_back(another_pyramid_rbt);
 //	g_model_rotation_speed.push_back(0); // Initial rotation speed
 	g_models[6].rotation_speed = 0;
@@ -435,7 +437,8 @@ int main( void )
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		currentTime = (float)glfwGetTime();
-		g_world_rbt = g_world_rbt * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_x, vec3(1.0f, 0.0f, 0.0f)) * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_z, vec3(0.0f, 0.0f, 1.0f)); // 7. Creativity: the world spins
+		g_world_rbt = g_world_rbt * rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_x, vec3(1.0f, 0.0f, 0.0f))
+			* rotate(mat4(1.0f), (currentTime - lastTime)*g_world_rbt_rotation_speed_z, vec3(0.0f, 0.0f, 1.0f)); // 7. Creativity: the world spins
 
 		model_view = g_world_rbt;
 		
