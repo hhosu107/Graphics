@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\fdeeb1557067eee3c477d1fbb926e31a\gtest-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\5169fce7f21f9e4ead67330535d58f96\gtest-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\build\CMakeFiles\8a9f0cac0924ea3f41b4504be0b5b3f9\gtest.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\Gits\Graphics\HW2\build\ExternalProjects\assimp-3.3.1\test\CMakeFiles\gtest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FF607523-4AC2-3B70-9255-F7A677C651A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

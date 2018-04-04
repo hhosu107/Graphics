@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/ExternalProjects/assimp-3.3.1/test/CMakeFiles/gtest"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/8a9f0cac0924ea3f41b4504be0b5b3f9/gtest.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/5169fce7f21f9e4ead67330535d58f96/gtest-complete.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-install.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-mkdir.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-download.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-update.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-patch.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-configure.rule"
+		},
+		{
+			"file" : "E:/Gits/Graphics/HW2/build/CMakeFiles/fdeeb1557067eee3c477d1fbb926e31a/gtest-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"gtest"
+		],
+		"name" : "gtest"
+	}
+}

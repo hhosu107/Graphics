@@ -1,0 +1,11 @@
+prefix=C:/Program Files/CS580
+exec_prefix=C:/Program Files/CS580/bin
+libdir=C:/Program Files/CS580/lib
+includedir=C:/Program Files/CS580/include/assimp
+
+Name: CS580
+Description: Import various well-known 3D model formats in an uniform manner.
+Version: 3.3.1
+Libs: -L${libdir} -lassimp
+Libs.private:  
+Cflags: -I${includedir}
