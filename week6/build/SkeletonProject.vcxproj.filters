@@ -75,6 +75,8 @@
     <None Include="E:\Gits\Graphics\week6\Skeleton\FragmentShader.glsl" />
     <None Include="E:\Gits\Graphics\week6\Skeleton\LineVertexShader.glsl" />
     <None Include="E:\Gits\Graphics\week6\Skeleton\LineFragmentShader.glsl" />
+    <None Include="..\Skeleton\TextureFragmentShader.glsl" />
+    <None Include="..\Skeleton\TextureVertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

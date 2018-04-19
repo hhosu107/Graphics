@@ -343,7 +343,7 @@ int main( void )
 	test_model.InitializeGLSL(ARRAY);
 	test_model.SetProjection(&g_projection);
 	test_model.SetEyeRbt(&g_eye_rbt);
-	mat4 test_m = scale(vec3(5.0, 5.0, 5.0));
+	mat4 test_m = scale(vec3(10.0, 10.0, 10.0));
 	test_model.SetModelRbt(&test_m);
 	test_model.SetProgram(texture_shader);
 
