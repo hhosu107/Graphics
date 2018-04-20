@@ -15,7 +15,11 @@
 
 // Include common libraries
 #include "node.hpp"
+#include "common/rtt.hpp"
 #include <common/shader.hpp>
+
+// Include SOIL static library
+#include "SOIL/SOIL.h"
 
 using namespace std;
 using namespace glm;
@@ -46,8 +50,35 @@ vector<Node*> g_nodes;
 mat4 g_projection;
 // Camera model property
 mat4 g_eye_rbt;
+mat4 fixed_eye_rbt;
 // World model property
 mat4 g_world_rbt = mat4(1.0f);
+
+// Render To Texture
+RTT render_to_texture;
+
+// SOIL texture loading
+/*
+GLuint tex_cube = SOIL_load_OGL_cubemap
+(
+	"./resources/images/skygnd.bmp",
+	"./resources/images/skygnd.bmp",
+	"./resources/images/skygnd.bmp",
+	"./resources/images/skygnd.bmp",
+	"./resources/images/sky.bmp",
+	"./resources/images/gnd.bmp",
+	SOIL_LOAD_AUTO,
+	SOIL_CREATE_NEW_ID,
+	SOIL_FLAG_MIPMAPS
+);
+*/
+// Sample from TA
+/*
+int width, height;
+unsigned char* image = SOIL_load_image("img.png", &width, &height, 0, SOIL_LOAD_RGB);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+SOIL_free_image_data(image);
+*/
 
 // Event functions
 static void WindowSizeCallback(GLFWwindow*, int, int);
@@ -82,11 +113,11 @@ void CleanUp()
 void AddColorModel(ColorModel& a_model, GLuint a_program, GEOMETRY_TYPE a_type, vec3 a_color)
 {
 	/*
-	 * Setting a model
-	 * 1. Initialize data for model;
-	 * 2. Transfer to vertex buffer
-	 * 3. Set projection, eye matrix, model matrix (in this case we will cover in node class), glsl program
-	 */
+	* Setting a model
+	* 1. Initialize data for model;
+	* 2. Transfer to vertex buffer
+	* 3. Set projection, eye matrix, model matrix (in this case we will cover in node class), glsl program
+	*/
 	switch (a_type)
 	{
 	case CUBE:
@@ -108,7 +139,7 @@ void AddColorModel(ColorModel& a_model, GLuint a_program, GEOMETRY_TYPE a_type, 
 	}
 
 	a_model.SetProjection(&g_projection);
-	a_model.SetEyeRbt(&g_eye_rbt);
+	a_model.SetEyeRbt(&fixed_eye_rbt);
 	a_model.SetProgram(a_program);
 }
 
@@ -123,9 +154,12 @@ static void WindowSizeCallback(GLFWwindow* a_window, int a_width, int a_height)
 	// window size != framebuffer size
 	glfwGetFramebufferSize(a_window, &g_framebuffer_width, &g_framebuffer_height);
 	glViewport(0, 0, (GLsizei)g_framebuffer_width, (GLsizei)g_framebuffer_height);
-	
+
 	// Update projection matrix
 	g_projection = perspective(g_fov, ((float)g_framebuffer_width / (float)g_framebuffer_height), 0.1f, 100.0f);
+
+	// Update RTT
+	render_to_texture.CreateTexture(g_framebuffer_width, g_framebuffer_height);
 }
 
 // TODO: Fill up GLFW mouse button callback function
@@ -197,12 +231,12 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 }
 
 
-int main( void )
+int main(void)
 {
 	// Initialise GLFW
-	if( !glfwInit() )
+	if (!glfwInit())
 	{
-		fprintf( stderr, "Failed to initialize GLFW\n" );
+		fprintf(stderr, "Failed to initialize GLFW\n");
 		return -1;
 	}
 
@@ -213,10 +247,10 @@ int main( void )
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	// Open a window and create its OpenGL context
-	g_window = glfwCreateWindow( 1024, 768, "Homework 2: Your Student ID - Your Name", NULL, NULL);
+	g_window = glfwCreateWindow(1024, 768, "Homework 2: Your Student ID - Your Name", NULL, NULL);
 
-	if( g_window == NULL ){
-		fprintf( stderr, "Failed to open GLFW window." );
+	if (g_window == NULL) {
+		fprintf(stderr, "Failed to open GLFW window.");
 		glfwTerminate();
 		return -1;
 	}
@@ -256,19 +290,21 @@ int main( void )
 
 	g_projection = perspective(g_fov, ((float)g_framebuffer_width / (float)g_framebuffer_height), 0.1f, 100.0f);
 
-	g_eye_rbt = translate(mat4(1.0f), vec3(0.0, -2.0f, 10.0));
+	g_eye_rbt = translate(mat4(1.0f), vec3(0.0, 0.0f, 10.0));
+	fixed_eye_rbt = translate(mat4(1.0f), vec3(0.0, -2.0f, 10.0));
 
 	// Initialize shader program (for efficiency)
 	GLuint diffuse_shader = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
 	GLuint line_shader = LoadShaders("LineVertexShader.glsl", "LineFragmentShader.glsl");
+	GLuint texture_shader = LoadShaders("TextureVertexShader.glsl", "TextureFragmentShader.glsl");
 
-	/* 
-	 * Node configuration
-	 * 1. Setting node
-	 * 2. Update hierarchical frame and setting lines for them
-	 * 3. Add models to each node
-	 * 4. Update object frame
-	 */
+	/*
+	* Node configuration
+	* 1. Setting node
+	* 2. Update hierarchical frame and setting lines for them
+	* 3. Add models to each node
+	* 4. Update object frame
+	*/
 
 	// 1
 	Node root = Node();
@@ -277,7 +313,7 @@ int main( void )
 	Node f_3 = Node();
 	Node f_11 = Node();
 	Node f_12 = Node();
-	
+
 	g_nodes.push_back(&root); g_nodes.push_back(&f_1); g_nodes.push_back(&f_2); g_nodes.push_back(&f_3);
 	g_nodes.push_back(&f_11); g_nodes.push_back(&f_12);
 
@@ -288,14 +324,14 @@ int main( void )
 	root.InitialChildrenFrame();
 	for (int i = 0; i < g_nodes.size(); i++)
 	{
-		g_nodes[i]->SetLines(line_shader, &g_projection, &g_eye_rbt);
+		g_nodes[i]->SetLines(line_shader, &g_projection, &fixed_eye_rbt);
 	}
-	
+
 	// 3.
 	ColorModel r_m1 = ColorModel();
 	AddColorModel(r_m1, diffuse_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
 	root.AddModel(&r_m1, mat4(1.0f));
-	
+
 	// Multiple objects for same basis
 	ColorModel f1_m1 = ColorModel();
 	AddColorModel(f1_m1, diffuse_shader, PYRAMID, vec3(1.0f, 0.0f, 0.0f));
@@ -328,24 +364,39 @@ int main( void )
 	// 4.
 	root.UpdateObjectFrame();
 
+	TextureModel test_model = TextureModel();
+	// InitDataCube(test_model);
+	InitDataCubeInternal(test_model);
+	test_model.InitializeGLSL(ARRAY);
+	test_model.SetProjection(&g_projection);
+	test_model.SetEyeRbt(&g_eye_rbt);
+	mat4 test_m = scale(vec3(15.0, 15.0, 15.0));
+	test_model.SetModelRbt(&test_m);
+	test_model.SetProgram(texture_shader);
+
+	render_to_texture = RTT();
+	render_to_texture.CreateTexture(g_framebuffer_width, g_framebuffer_height);
+
 	double prev_time = glfwGetTime();
 
 	do {
 		// Clear the screen	
 		// Fill the background
-		glClearColor((GLclampf)0.0f, (GLclampf)0.0f, (GLclampf)0.0f, (GLclampf)0.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		
+
 		double current_time = glfwGetTime();
 		double elapsed_time = current_time - prev_time;
-				
+
 		prev_time = current_time;
-		
+
 		// Scene update
 		for (int i = 0; i < g_nodes.size(); i++)
 		{
 			g_nodes[i]->ApplyRotation((float)elapsed_time);
 		}
+
+		render_to_texture.BindFBO();
+		glClearColor((GLclampf)0.0f, (GLclampf)0.0f, (GLclampf)0.0f, (GLclampf)0.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// 5. Draw
 		for (int i = 0; i < g_nodes.size(); i++)
@@ -356,11 +407,22 @@ int main( void )
 				g_nodes[i]->Draw();
 				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			}
-			else 
+			else
 			{
 				g_nodes[i]->Draw();
 			}
 		}
+		render_to_texture.UnbindFBO();
+
+		// test_m = test_m * rotate(mat4(1.0f), (float) (0.3 * elapsed_time), vec3(1.0, 1.0, 1.0));
+
+
+		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		test_model.SetColorTexture(render_to_texture.GetTexture());
+		glGenerateMipmap(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, 0);
+		test_model.Draw();
 
 		// Swap buffers
 		glfwSwapBuffers(g_window);
@@ -368,7 +430,7 @@ int main( void )
 
 	} // Check if the ESC key was pressed or the window was closed
 	while (glfwGetKey(g_window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-	glfwWindowShouldClose(g_window) == 0);
+		glfwWindowShouldClose(g_window) == 0);
 
 	// Cleanup all resources
 	CleanUp();

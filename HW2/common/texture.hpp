@@ -9,11 +9,14 @@ using namespace std;
 using namespace glm;
 
 class Texture {
-	
+
 protected:
-	
+	GLuint m_texture_unit;
 public:
-	
+	Texture();
+	~Texture();
+	GLuint GetTexture();
+	void SetTexture(GLuint a_texture);
 };
 
 #endif

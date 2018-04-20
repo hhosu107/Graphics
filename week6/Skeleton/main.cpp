@@ -339,11 +339,12 @@ int main( void )
 	root.UpdateObjectFrame();
 
 	TextureModel test_model = TextureModel();
-	InitDataCube(test_model);
+	// InitDataCube(test_model);
+	InitDataCubeInternal(test_model);
 	test_model.InitializeGLSL(ARRAY);
 	test_model.SetProjection(&g_projection);
 	test_model.SetEyeRbt(&g_eye_rbt);
-	mat4 test_m = scale(vec3(10.0, 10.0, 10.0));
+	mat4 test_m = scale(vec3(15.0, 15.0, 15.0));
 	test_model.SetModelRbt(&test_m);
 	test_model.SetProgram(texture_shader);
 
@@ -387,15 +388,16 @@ int main( void )
 		}
 		render_to_texture.UnbindFBO(); 
 
-		test_m = test_m * rotate(mat4(1.0f), (float) (0.3 * elapsed_time), vec3(1.0, 1.0, 1.0));
+		// test_m = test_m * rotate(mat4(1.0f), (float) (0.3 * elapsed_time), vec3(1.0, 1.0, 1.0));
 
+		
 		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		test_model.SetColorTexture(render_to_texture.GetTexture());
 		glGenerateMipmap(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, 0);
 		test_model.Draw();
-
+		
 		// Swap buffers
 		glfwSwapBuffers(g_window);
 		glfwPollEvents();

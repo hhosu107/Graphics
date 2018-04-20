@@ -8,3 +8,25 @@
 using namespace std;
 using namespace glm;
 
+Texture::Texture()
+{
+	m_texture_unit = 0;
+}
+
+Texture::~Texture()
+{
+	if (m_texture_unit != 0)
+	{
+		glDeleteTextures(1, &m_texture_unit);
+	}
+}
+
+GLuint Texture::GetTexture()
+{
+	return m_texture_unit;
+}
+
+void Texture::SetTexture(GLuint a_texture)
+{
+	m_texture_unit = a_texture;
+}
