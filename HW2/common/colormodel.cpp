@@ -70,9 +70,46 @@ void ColorModel::Draw(void)
 	GLint eye_id = glGetUniformLocation(m_glsl_program_id, "Eye");
 	GLint model_id = glGetUniformLocation(m_glsl_program_id, "ModelTransform");
 
+	// matrices
 	glUniformMatrix4fv(projection_id, 1, GL_FALSE, &(*(m_projection))[0][0]);
 	glUniformMatrix4fv(eye_id, 1, GL_FALSE, &(*(m_eye_rbt))[0][0]);
 	glUniformMatrix4fv(model_id, 1, GL_FALSE, &(*(m_model_rbt))[0][0]);
+
+	// material properties
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "material.diffuseIntensity"), 1.0);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "material.specularIntensity"), 1.0);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "material.shininess"), 4.0f);
+
+	// directional light
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional.dir"), 1.0f, 1.0f, 1.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional.amb"), 0.1f, 0.1f, 0.1f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional.diff"), 1.0f, 1.0f, 1.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional.spec"), 0.6f, 0.6f, 0.6f);
+
+	// point light
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point.pos"), -4.0f, 3.0f, 0.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point.amb"), 0.1f, 0.1f, 0.1f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point.diff"), 0.6f, 0.6f, 0.6f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point.spec"), 0.4f, 0.4f, 0.4f);
+
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point.a"), 1.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point.b"), 2.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point.c"), 0.2f);
+
+	// spot light
+	/*
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.pos"), -4.0f, 3.0f, 0.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.amb"), 0.1f, 0.1f, 0.1f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.diff"), 0.6f, 0.6f, 0.6f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.spec"), 0.4f, 0.4f, 0.4f);
+
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.dir"), 1.0f, -1.0f, 3.0f);
+
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.a"), 1.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.b"), 2.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.c"), 0.2f);
+	*/
+
 
 	glBindVertexArray(m_vertex_array_id);
 	glEnableVertexAttribArray(0);

@@ -22,6 +22,13 @@ const vec3 vertices[8] = {
 	vec3(0.5, -0.5, -0.5)
 };
 
+const vec3 sqvertices[4] = {
+	vec3(-0.5, -0.5, 0),
+	vec3(-0.5, 0.5, 0),
+	vec3(0.5, 0.5, 0),
+	vec3(0.5, -0.5, 0)
+};
+
 // input: a_model (model's reference), a_a (positon of a), a_b (postion of b), a_c (position of c)
 inline void ComputeNormal(ColorModel &a_model, vec3 a_a, vec3 a_b, vec3 a_c)
 {
@@ -132,6 +139,32 @@ inline void QuadTexInternal(TextureModel &a_model, int a_a, int a_b, int a_c, in
 	ComputeNormal(a_model, vertices[a_a], vertices[a_d], vertices[a_c]);
 	ComputeNormal(a_model, vertices[a_a], vertices[a_c], vertices[a_b]);
 }
+
+inline void SquareTex(TextureModel &a_model, int a_a, int a_b, int a_c, int a_d)
+{
+	/* a -- d
+	 * |    |
+	 * b -- c
+	 * Note that we will attach texture "inside" of the cube.
+	 */
+
+	a_model.AddPosition(sqvertices[a_a]);
+	a_model.AddUV(0.0f, 1.0f);
+	a_model.AddPosition(sqvertices[a_b]);
+	a_model.AddUV(0.0f, 0.0f);
+	a_model.AddPosition(sqvertices[a_c]);
+	a_model.AddUV(1.0f, 0.0f);
+	a_model.AddPosition(sqvertices[a_a]);
+	a_model.AddUV(0.0f, 1.0f);
+	a_model.AddPosition(sqvertices[a_c]);
+	a_model.AddUV(1.0f, 0.0f);
+	a_model.AddPosition(sqvertices[a_d]);
+	a_model.AddUV(1.0f, 1.0f);
+
+	ComputeNormal(a_model, sqvertices[a_a], sqvertices[a_b], sqvertices[a_c]);
+	ComputeNormal(a_model, sqvertices[a_a], sqvertices[a_c], sqvertices[a_d]);
+}
+
 // input: a_model (model's reference), a_color (color of cube)
 inline void InitDataCube(ColorModel &a_model, vec3 a_color)
 {
@@ -184,6 +217,16 @@ inline void InitDataCubeInternal(TextureModel &a_model)
 	QuadTexInternal(a_model, 5, 1, 2, 6);
 	QuadTexInternal(a_model, 6, 7, 4, 5);
 	QuadTexInternal(a_model, 5, 4, 0, 1);
+}
+
+inline void InitDataSquare(TextureModel &a_model)
+{
+	/* 1 -- 2
+	 * |    |
+	 * 0 -- 3
+	 */
+
+	SquareTex(a_model, 1, 0, 3, 2);
 }
 
 // input: a_model (model's reference), a_colors (color of each face of cube)

@@ -21,6 +21,7 @@ public:
 	void CreateTexture(double a_width, double a_height, GLuint texture_id);
 	void BindFBO();
 	void UnbindFBO();
+	void SetTexture(const char* name);
 	Texture* GetTexture();
 };
 
