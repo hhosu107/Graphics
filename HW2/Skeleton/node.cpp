@@ -76,6 +76,13 @@ void Node::ApplyRotation(float elasped_time)
 	UpdateObjectFrame();
 }
 
+void Node::LightSwitch(int i)
+{
+	for(int j=0; j<m_models.size(); j++)
+		(m_models[j])->Switch(i);
+}
+
+
 void Node::InitialChildrenFrame(void)
 {
 	// Compute degree

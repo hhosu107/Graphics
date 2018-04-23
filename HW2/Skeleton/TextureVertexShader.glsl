@@ -9,6 +9,8 @@ layout(location = 2) in vec2 vertex_uv;
 out vec3 fragmentPosition;
 out vec3 fragmentNormal;
 out vec2 fragmentUV;
+out vec3 fragmentWorldPosition;
+out vec3 fragmentWorldNormal;
 
 uniform mat4 ModelTransform;
 uniform mat4 Eye;
@@ -25,6 +27,10 @@ mat4 NormalMatrix(mat4 MVM)
 }
 
 void main(){	
+
+	// Output position of the vertex, in world space: Model * position
+	fragmentWorldPosition = (ModelTransform * vec4(vertexPosition_modelspace, 1.0)).xyz;
+	fragmentWorldNormal = (NormalMatrix(ModelTransform) * vec4(vertexNormal_modelspace, 0.0)).xyz;
 
 	// Output position of the vertex, in clip space : MVP * position
 	mat4 MVM = inverse(Eye) * ModelTransform;

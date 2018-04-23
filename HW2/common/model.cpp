@@ -54,3 +54,8 @@ void Model::SetProgram(GLuint a_program_id)
 {
 	m_glsl_program_id = a_program_id;
 }
+
+void Model::Switch(int i)
+{
+	m_lights[i] = 1 - m_lights[i];
+}

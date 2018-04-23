@@ -18,6 +18,7 @@ class Model {
 protected:
 	vector<vec3> m_positions;
 	vector<unsigned int> m_indices;
+	int m_lights[6] = { 0,0,0,0,0,0 };
 
 	mat4* m_projection;
 	mat4* m_eye_rbt;
@@ -46,6 +47,8 @@ public:
 	void SetModelRbt(mat4* p_model_rbt);
 	// Get Model Transformation
 	mat4 GetModelRbt(void);
+	// Switch lights
+	void Switch(int i);
 	// Set glsl program to this model
 	void SetProgram(GLuint a_program_id);
 	// Set a shader program for this model and transfer data to vertex buffers (abstract function)

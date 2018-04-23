@@ -34,6 +34,10 @@ public:
 	void AddUV(vec2 a_uv);
 	// Bind texture
 	void SetColorTexture(Texture* a_texture);
+	// Set texture
+	void SetColorTexture(const char* name);
+	// Get Texture
+	Texture* GetTexture();
     // Set a shader program for this model and transfer data to vertex buffers 
 	void InitializeGLSL(DRAW_TYPE a_draw_type);
 	// Draw function

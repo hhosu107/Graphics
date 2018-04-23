@@ -43,6 +43,8 @@ public:
 	void AddSpeed(float a_amount);
 	void ResetSpeed(void);
 	void ApplyRotation(float a_elasped_time);
+	// Switch lights
+	void LightSwitch(int i);
 	void InitialChildrenFrame(void);
 	void UpdateChildrenFrame(void);
 	void UpdateObjectFrame(void);

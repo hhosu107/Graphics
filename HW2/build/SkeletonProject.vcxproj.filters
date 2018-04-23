@@ -25,10 +25,16 @@
     <ClCompile Include="E:\Gits\Graphics\HW2\common\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\common\texturemodel.cpp">
+    <ClCompile Include="..\common\objloader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\common\rtt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\texturemodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\vboindexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,10 +66,16 @@
     <ClInclude Include="E:\Gits\Graphics\HW2\common\texture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\common\texturemodel.hpp">
+    <ClInclude Include="..\common\objloader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\common\rtt.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\texturemodel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\vboindexer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

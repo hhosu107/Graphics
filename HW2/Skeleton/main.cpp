@@ -58,6 +58,8 @@ mat4 g_world_rbt = mat4(1.0f);
 RTT render_to_texture;
 // Render surround walls and floor/ceiling
 RTT surround_rtt[6];
+// Texture model of surround walls
+TextureModel surround[6];
 
 // SOIL texture loading
 /*
@@ -210,28 +212,71 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			break;
 		case GLFW_KEY_UP:
 			g_eye_rbt = translate(vec3(0.0f, 1.0f, 0.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(0.0f, 1.0f, 0.0f)) * fixed_eye_rbt;
 			break;
 		case GLFW_KEY_DOWN:
 			g_eye_rbt = translate(vec3(0.0f, -1.0f, 0.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(0.0f, -1.0f, 0.0f)) * fixed_eye_rbt;
 			break;
 		case GLFW_KEY_LEFT:
 			g_eye_rbt = translate(vec3(-1.0f, 0.0f, 0.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(-1.0f, 0.0f, 0.0f)) * fixed_eye_rbt;
 			break;
 		case GLFW_KEY_RIGHT:
 			g_eye_rbt = translate(vec3(1.0f, 0.0f, 0.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(1.0f, 0.0f, 0.0f)) * fixed_eye_rbt;
 			break;
 		case GLFW_KEY_LEFT_BRACKET:
 			g_eye_rbt = translate(vec3(0.0f, 0.0f, -1.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(0.0f, 0.0f, -1.0f)) * fixed_eye_rbt;
 			break;
 		case GLFW_KEY_RIGHT_BRACKET:
 			g_eye_rbt = translate(vec3(0.0f, 0.0f, 1.0f)) * g_eye_rbt;
-			//fixed_eye_rbt = translate(vec3(0.0f, 0.0f, 1.0f)) * fixed_eye_rbt;
 			break;
+		case GLFW_KEY_1:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(0);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(0);
+			}
+			break;
+		case GLFW_KEY_2:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(1);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(1);
+			}
+			break;
+		case GLFW_KEY_3:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(2);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(2);
+			}
+			break;
+		case GLFW_KEY_4:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(3);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(3);
+			}
+			break;
+		case GLFW_KEY_5:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(4);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(4);
+			}
+			break;
+		case GLFW_KEY_6:
+			for (int i = 0; i < g_nodes.size(); i++) {
+				g_nodes[i]->LightSwitch(5);
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->Switch(5);
+			}
+			break;
+
 		default:
 			break;
 		}
@@ -372,20 +417,8 @@ int main(void)
 	// 4.
 	root.UpdateObjectFrame();
 
-	TextureModel test_model = TextureModel();
 	mat4 test_m = scale(vec3(10.0, 10.0, 10.0));
-	// InitDataCube(test_model);
-	InitDataCubeInternal(test_model);
-	test_model.InitializeGLSL(ARRAY);
-	test_model.SetProjection(&g_projection);
-	test_model.SetEyeRbt(&g_eye_rbt);
-	// surround_m[0] = translate(vec3(-test_m[2]) / 2) * rotate(mat4(1.0f), 0.0f, vec3(0.0, 1.0, 0.0)) * test_m;
-	test_model.SetModelRbt(&test_m);
-	test_model.SetProgram(texture_shader);
-	render_to_texture = RTT();
-	render_to_texture.CreateTexture(g_framebuffer_width, g_framebuffer_height);
 
-	TextureModel surround[6];
 	mat4 surround_m[6];
 	// Walls
 	// back
@@ -400,6 +433,7 @@ int main(void)
 	surround[0].SetProgram(texture_shader);
 	surround_rtt[0] = RTT();
 	surround_rtt[0].SetTexture("../Resources/images/skygnd.png");
+	//surround[0].SetColorTexture("../Resources/images/skygnd.png");
 
 	// left
 	surround[1] = TextureModel();
@@ -413,6 +447,7 @@ int main(void)
 	surround[1].SetProgram(texture_shader);
 	surround_rtt[1] = RTT();
 	surround_rtt[1].SetTexture("../Resources/images/skygnd.png");
+	//surround[1].SetColorTexture("../Resources/images/skygnd.png");
 
 	// forth
 	surround[2] = TextureModel();
@@ -426,6 +461,7 @@ int main(void)
 	surround[2].SetProgram(texture_shader);
 	surround_rtt[2] = RTT();
 	surround_rtt[2].SetTexture("../Resources/images/skygnd.png");
+	//surround[2].SetColorTexture("../Resources/images/skygnd.png");
 
 	// right
 	surround[3] = TextureModel();
@@ -439,6 +475,7 @@ int main(void)
 	surround[3].SetProgram(texture_shader);
 	surround_rtt[3] = RTT();
 	surround_rtt[3].SetTexture("../Resources/images/skygnd.png");
+	//surround[3].SetColorTexture("../Resources/images/skygnd.png");
 
 	// Ceiling
 	surround[4] = TextureModel();
@@ -452,6 +489,7 @@ int main(void)
 	surround[4].SetProgram(texture_shader);
 	surround_rtt[4] = RTT();
 	surround_rtt[4].SetTexture("../Resources/images/gnd.png");
+	//surround[4].SetColorTexture("../Resources/images/gnd.png");
 
 	// Floor
 	surround[5] = TextureModel();
@@ -465,6 +503,7 @@ int main(void)
 	surround[5].SetProgram(texture_shader);
 	surround_rtt[5] = RTT();
 	surround_rtt[5].SetTexture("../Resources/images/sky.png");
+	//surround[5].SetColorTexture("../Resources/images/sky.png");
 
 	// now we have to set texture for each texture model.
 
@@ -522,8 +561,6 @@ int main(void)
 		*/
 		for (int i = 0; i < 6; i++) {
 			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
-			glGenerateMipmap(GL_TEXTURE_2D);
-			glBindTexture(GL_TEXTURE_2D, 0);
 			surround[i].Draw();
 		}
 
@@ -541,6 +578,7 @@ int main(void)
 	// Clean up shader
 	glDeleteProgram(diffuse_shader);
 	glDeleteProgram(line_shader);
+	glDeleteProgram(texture_shader);
 
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();
