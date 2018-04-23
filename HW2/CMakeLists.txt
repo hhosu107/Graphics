@@ -66,6 +66,10 @@ add_executable(SkeletonProject
   common/colormodel.hpp
   common/linemodel.cpp
   common/linemodel.hpp
+  common/texturemodel.cpp
+  common/texturemodel.hpp
+  common/rtt.cpp
+  common/rtt.hpp
 
   # mobile definition
   Skeleton/node.cpp
@@ -82,6 +86,8 @@ add_executable(SkeletonProject
   Skeleton/FragmentShader.glsl
   Skeleton/LineVertexShader.glsl
   Skeleton/LineFragmentShader.glsl
+  Skeleton/TextureVertexShader.glsl
+  Skeleton/TextureFragmentShader.glsl
 )
 
 target_link_libraries(SkeletonProject

@@ -55,7 +55,12 @@ void Model::SetProgram(GLuint a_program_id)
 	m_glsl_program_id = a_program_id;
 }
 
-void Model::Switch(int i)
+void Model::Switch(int i) // Turn on/off such light
 {
 	m_lights[i] = 1 - m_lights[i];
+}
+
+void Model::BlinnSwitch() // Blinn-phong or phong
+{
+	blinn = 1 - blinn;
 }

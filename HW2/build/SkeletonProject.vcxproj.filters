@@ -16,6 +16,12 @@
     <ClCompile Include="E:\Gits\Graphics\HW2\common\linemodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW2\common\texturemodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Gits\Graphics\HW2\common\rtt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\Gits\Graphics\HW2\Skeleton\node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -23,18 +29,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="E:\Gits\Graphics\HW2\common\texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common\objloader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common\rtt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common\texturemodel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common\vboindexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,6 +51,12 @@
     <ClInclude Include="E:\Gits\Graphics\HW2\common\linemodel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW2\common\texturemodel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Gits\Graphics\HW2\common\rtt.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\Gits\Graphics\HW2\Skeleton\node.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -64,18 +64,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\Gits\Graphics\HW2\common\texture.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\objloader.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\rtt.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\texturemodel.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\vboindexer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -87,8 +75,8 @@
     <None Include="E:\Gits\Graphics\HW2\Skeleton\FragmentShader.glsl" />
     <None Include="E:\Gits\Graphics\HW2\Skeleton\LineVertexShader.glsl" />
     <None Include="E:\Gits\Graphics\HW2\Skeleton\LineFragmentShader.glsl" />
-    <None Include="..\Skeleton\TextureFragmentShader.glsl" />
-    <None Include="..\Skeleton\TextureVertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW2\Skeleton\TextureVertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW2\Skeleton\TextureFragmentShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

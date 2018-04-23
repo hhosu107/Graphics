@@ -26,6 +26,7 @@ GLuint Texture::GetTexture()
 	return m_texture_unit;
 }
 
+// If the instance is attached to RTT instance, this function will not be used.
 void Texture::SetTexture(const char* name)
 {
 	int a_width, a_height;

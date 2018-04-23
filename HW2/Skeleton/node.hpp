@@ -45,6 +45,8 @@ public:
 	void ApplyRotation(float a_elasped_time);
 	// Switch lights
 	void LightSwitch(int i);
+	// Blinn-phong or phong
+	void BlinnSwitch();
 	void InitialChildrenFrame(void);
 	void UpdateChildrenFrame(void);
 	void UpdateObjectFrame(void);

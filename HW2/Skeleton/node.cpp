@@ -76,12 +76,17 @@ void Node::ApplyRotation(float elasped_time)
 	UpdateObjectFrame();
 }
 
-void Node::LightSwitch(int i)
+void Node::LightSwitch(int i) // Turn on/off such light
 {
 	for(int j=0; j<m_models.size(); j++)
 		(m_models[j])->Switch(i);
 }
 
+void Node::BlinnSwitch(void) // Blinn-phong or phong
+{
+	for (int j = 0; j < m_models.size(); j++)
+		(m_models[j])->BlinnSwitch();
+}
 
 void Node::InitialChildrenFrame(void)
 {

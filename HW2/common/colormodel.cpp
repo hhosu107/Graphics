@@ -83,53 +83,42 @@ void ColorModel::Draw(void)
 	glUniform1i(glGetUniformLocation(m_glsl_program_id, "light[5]"), m_lights[5]);
 
 	// material properties
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "material.alpha"), 2.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "material.alpha"), 3.0f);
 
 	// directional light (R, G, B)
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "d"), 0.4f);
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "s"), 0.6f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "blinn"), blinn);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[0].dir"), 1.0f, 1.0f, 1.0f);
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[0].color"), 1.0f, 0.0f, 0.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[0].diff"), 0.4f, 0.0f, 0.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[0].spec"), 0.6f, 0.0f, 0.0f);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[1].dir"), 1.0f, 1.0f, 1.0f);
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[1].color"), 0.0f, 1.0f, 0.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[1].diff"), 0.0f, 0.4f, 0.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[1].spec"), 0.0f, 0.6f, 0.0f);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[2].dir"), 1.0f, 1.0f, 1.0f);
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[2].color"), 0.0f, 0.0f, 1.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[2].diff"), 0.0f, 0.0f, 0.4f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "directional[2].spec"), 0.0f, 0.0f, 0.6f);
 
 	// point light
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].pos"), 0.0f, 2.0f, 0.0f);
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].color"), 0.5f, 1.0f, 0.25f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].diff"), 0.2f, 0.4f, 0.1f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].spec"), 0.3f, 0.6f, 0.15f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].pos"), 2.0f, 3.0f, -2.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].color"), 0.8f, 0.0f, 0.8f);
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].a"), 1.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 1.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.1f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.1f);
 
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].pos"), 0.0f, -3.0f, -3.0f);
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 0.5f, 0.75f, 0.75f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].diff"), 0.2f, 0.3f, 0.3f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].spec"), 0.3f, 0.45f, 0.45f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].pos"), 0.0f, -3.0f, 3.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 0.25f, 0.75f, 0.25f);
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].a"), 1.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].b"), 0.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].c"), 1.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.1f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.1f);
 
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.pos"), 0.0f, -2.0f, 6.0f);
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.color"), 1.0f, 1.0f, 1.0f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.diff"), 0.6f, 0.6f, 0.6f);
-	//glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.spec"), 0.4f, 0.4f, 0.4f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.pos"), -1.0f, -4.0f, 10.0f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.color"), 0.7f, 0.7f, 0.7f);
 
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.dir"), 0.0f, 0.0f, -3.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.cutoff"), atan(0.5f));
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.dir"), 0.1f, 0.2f, -1.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.cutoff"), atan(0.3f));
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.a"), 1.0f);
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "spot.b"), 0.0f);

@@ -50,7 +50,6 @@ vector<Node*> g_nodes;
 mat4 g_projection;
 // Camera model property
 mat4 g_eye_rbt;
-mat4 fixed_eye_rbt;
 // World model property
 mat4 g_world_rbt = mat4(1.0f);
 
@@ -196,6 +195,20 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			cout << "keymaps:" << endl;
 			cout << "h\t\t Help command" << endl;
 			cout << "p\t\t Enable/Disable picking" << endl;
+			cout << "o\t\t Pick the next object" << endl;
+			cout << "n\t\t Change the rotation speed of the current object by -10 degree per sec according to the local y-axis" << endl;
+			cout << "m\t\t Change the rotation speed of the current object by 10 degree per sec according to the local y-axis" << endl;
+			cout << "r\t\t Reset the rotation speed of the current object by 0 degree per sec according to the local y-axis" << endl;
+			cout << "up button\t\t move the eye by 1 along y-axis" << endl;
+			cout << "down button\t\t move the eye by 1 along y-axis" << endl;
+			cout << "left button\t\t move the eye by -1 along x-axis" << endl;
+			cout << "right button\t\t move the eye by 1 along x-axis" << endl;
+			cout << "left bracket\t\t move the eye by -1 along z-axis" << endl;
+			cout << "right bracket\t\t move the eye by 1 along z-axis" << endl;
+			cout << "b\t\t switch between blinn-phong and phong lighting" << endl;
+			cout << "1-3\t\t turn on/off the red/blue/green directional lights" << endl;
+			cout << "4-5\t\t turn on/off two point lights" << endl;
+			cout << "6\t\t turn on/off the spot light" << endl;
 			break;
 		case GLFW_KEY_O:
 			g_nodes_index += 1;
@@ -227,6 +240,14 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			break;
 		case GLFW_KEY_RIGHT_BRACKET:
 			g_eye_rbt = translate(vec3(0.0f, 0.0f, 1.0f)) * g_eye_rbt;
+			break;
+		case GLFW_KEY_B:
+			for(int i=0; i<g_nodes.size(); i++){
+				g_nodes[i]->BlinnSwitch();
+			}
+			for (int i = 0; i < 6; i++) {
+				(&surround[i])->BlinnSwitch();
+			}
 			break;
 		case GLFW_KEY_1:
 			for (int i = 0; i < g_nodes.size(); i++) {
@@ -344,7 +365,6 @@ int main(void)
 	g_projection = perspective(g_fov, ((float)g_framebuffer_width / (float)g_framebuffer_height), 0.1f, 100.0f);
 
 	g_eye_rbt = translate(mat4(1.0f), vec3(0.0, 0.0f, 10.0));
-	fixed_eye_rbt = translate(mat4(1.0f), vec3(0.0, -2.0f, 10.0));
 
 	// Initialize shader program (for efficiency)
 	GLuint diffuse_shader = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
@@ -426,14 +446,12 @@ int main(void)
 	InitDataSquare(surround[0]);
 	surround[0].InitializeGLSL(ARRAY);
 	surround[0].SetProjection(&g_projection);
-	// surround[0].SetEyeRbt(&fixed_eye_rbt);
 	surround[0].SetEyeRbt(&g_eye_rbt);
 	surround_m[0] = translate(vec3(-test_m[2]) / 2) * rotate(mat4(1.0f), 0.0f, vec3(0.0, 1.0, 0.0)) * test_m;
 	surround[0].SetModelRbt(&surround_m[0]);
 	surround[0].SetProgram(texture_shader);
 	surround_rtt[0] = RTT();
 	surround_rtt[0].SetTexture("../Resources/images/skygnd.png");
-	//surround[0].SetColorTexture("../Resources/images/skygnd.png");
 
 	// left
 	surround[1] = TextureModel();
@@ -441,27 +459,23 @@ int main(void)
 	surround[1].InitializeGLSL(ARRAY);
 	surround[1].SetProjection(&g_projection);
 	surround[1].SetEyeRbt(&g_eye_rbt);
-	//surround[1].SetEyeRbt(&fixed_eye_rbt);
 	surround_m[1] = translate(vec3(-test_m[0]) / 2) * rotate(mat4(1.0f), 2.0f*atanf(1.0f), vec3(0.0, 1.0, 0.0)) * test_m;
 	surround[1].SetModelRbt(&surround_m[1]);
 	surround[1].SetProgram(texture_shader);
 	surround_rtt[1] = RTT();
 	surround_rtt[1].SetTexture("../Resources/images/skygnd.png");
-	//surround[1].SetColorTexture("../Resources/images/skygnd.png");
 
-	// forth
+	// forth (invisible)
 	surround[2] = TextureModel();
 	InitDataSquare(surround[2]);
 	surround[2].InitializeGLSL(ARRAY);
 	surround[2].SetProjection(&g_projection);
 	surround[2].SetEyeRbt(&g_eye_rbt);
-	//surround[2].SetEyeRbt(&fixed_eye_rbt);
 	surround_m[2] = translate(vec3(test_m[2]) / 2) * rotate(mat4(1.0f), 4.0f*atanf(1.0f), vec3(0.0, 1.0, 0.0)) * test_m;
 	surround[2].SetModelRbt(&surround_m[2]);
 	surround[2].SetProgram(texture_shader);
 	surround_rtt[2] = RTT();
 	surround_rtt[2].SetTexture("../Resources/images/skygnd.png");
-	//surround[2].SetColorTexture("../Resources/images/skygnd.png");
 
 	// right
 	surround[3] = TextureModel();
@@ -469,13 +483,11 @@ int main(void)
 	surround[3].InitializeGLSL(ARRAY);
 	surround[3].SetProjection(&g_projection);
 	surround[3].SetEyeRbt(&g_eye_rbt);
-	//surround[3].SetEyeRbt(&fixed_eye_rbt);
 	surround_m[3] = translate(vec3(test_m[0]) / 2) * rotate(mat4(1.0f), 6.0f*atanf(1.0f), vec3(0.0, 1.0, 0.0)) * test_m;
 	surround[3].SetModelRbt(&surround_m[3]);
 	surround[3].SetProgram(texture_shader);
 	surround_rtt[3] = RTT();
 	surround_rtt[3].SetTexture("../Resources/images/skygnd.png");
-	//surround[3].SetColorTexture("../Resources/images/skygnd.png");
 
 	// Ceiling
 	surround[4] = TextureModel();
@@ -483,13 +495,11 @@ int main(void)
 	surround[4].InitializeGLSL(ARRAY);
 	surround[4].SetProjection(&g_projection);
 	surround[4].SetEyeRbt(&g_eye_rbt);
-	//surround[4].SetEyeRbt(&fixed_eye_rbt);
 	surround_m[4] = translate(vec3(test_m[1]) / 2) * rotate(mat4(1.0f), 2.0f*atanf(1.0f), vec3(1.0, 0.0, 0.0)) * test_m;
 	surround[4].SetModelRbt(&surround_m[4]);
 	surround[4].SetProgram(texture_shader);
 	surround_rtt[4] = RTT();
 	surround_rtt[4].SetTexture("../Resources/images/gnd.png");
-	//surround[4].SetColorTexture("../Resources/images/gnd.png");
 
 	// Floor
 	surround[5] = TextureModel();
@@ -497,13 +507,11 @@ int main(void)
 	surround[5].InitializeGLSL(ARRAY);
 	surround[5].SetProjection(&g_projection);
 	surround[5].SetEyeRbt(&g_eye_rbt);
-	//surround[5].SetEyeRbt(&fixed_eye_rbt);
 	surround_m[5] = translate(-vec3(test_m[1]) / 2) * rotate(mat4(1.0f), -2.0f*atanf(1.0f), vec3(1.0, 0.0, 0.0)) * test_m;
 	surround[5].SetModelRbt(&surround_m[5]);
 	surround[5].SetProgram(texture_shader);
 	surround_rtt[5] = RTT();
 	surround_rtt[5].SetTexture("../Resources/images/sky.png");
-	//surround[5].SetColorTexture("../Resources/images/sky.png");
 
 	// now we have to set texture for each texture model.
 
@@ -543,22 +551,6 @@ int main(void)
 				g_nodes[i]->Draw();
 			}
 		}
-		//render_to_texture.UnbindFBO();
-
-		// test_m = test_m * rotate(mat4(1.0f), (float) (0.3 * elapsed_time), vec3(1.0, 1.0, 1.0));
-
-		/*
-		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		test_model.SetColorTexture(render_to_texture.GetTexture());
-		glGenerateMipmap(GL_TEXTURE_2D);
-		glBindTexture(GL_TEXTURE_2D, 0);
-		test_model.Draw();
-		*/
-		/*
-		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		*/
 		for (int i = 0; i < 6; i++) {
 			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
 			surround[i].Draw();

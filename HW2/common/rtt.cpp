@@ -99,7 +99,7 @@ void RTT::SetTexture(const char* name)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_GENERATE_MIPMAP, GL_TRUE); // automatic mipmap
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, a_width, a_height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-	/*
+
 	glGenFramebuffers(1, &m_fbo);
 	glBindFramebuffer(GL_FRAMEBUFFER, m_fbo);
 	glFramebufferTexture2D(GL_FRAMEBUFFER,        // 1. fbo target: GL_FRAMEBUFFER 
@@ -107,7 +107,6 @@ void RTT::SetTexture(const char* name)
 		GL_TEXTURE_2D,         // 3. tex target: GL_TEXTURE_2D
 		texture_id,             // 4. tex ID
 		0);                    // 5. mipmap level: 0(base)
-		*/
 	m_texture.SetTexture(texture_id);
 	SOIL_free_image_data(image);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
