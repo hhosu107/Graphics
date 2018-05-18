@@ -149,7 +149,7 @@ void main(){
 	// fragment normal on world space
 	vec3 normal = normalize(fragmentWorldNormal);
 	// fragment view direction on world space: first represent the eye on the world coordinate and then compute the view vector
-	vec3 viewDirection = normalize((inverse(Eye) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - fragmentWorldPosition); 
+	vec3 viewDirection = -normalize((inverse(Eye) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - fragmentWorldPosition); 
 	// color by directional light
 	vec3 intensity = vec3(0.01, 0.01, 0.01); // ambient term initialization
 	for(int i=0; i<3; i++){
