@@ -125,7 +125,7 @@ void TextureModel::Draw(void)
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.1f);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].pos"), 0.0f, -3.0f, 3.0f);
-	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 0.25f, 0.75f, 0.25f);
+	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 0.25f, 0.75f, 0.45f);
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].a"), 1.0f);
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].b"), 0.1f);
