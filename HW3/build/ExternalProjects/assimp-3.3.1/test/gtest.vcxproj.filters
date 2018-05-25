@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\02e7329ca53187b864379918b7bf010c\gtest-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\dc9872320053450e7413e159b5e7d76d\gtest-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\587fd4e47f2c7f23927a14013bbb210c\gtest.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\test\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\Gits\Graphics\HW3\build\ExternalProjects\assimp-3.3.1\test\CMakeFiles\gtest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4F3BEA2F-37A5-3487-B9D0-1EEA4BAF4633}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
