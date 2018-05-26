@@ -110,6 +110,28 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 	// float diff = max(dot(normal, lightDirection), 0.0);
 	// HW3: Gooch Shading
 	float diff = (1.0 + dot(normal, lightDirection))/2;
+	if (diff >= 0.93){
+		diff = 1.0;
+	}
+	else if(diff >= 0.78){
+		diff = 0.85;
+	}
+	else if(diff >= 0.64){
+		diff = 0.7;
+	}
+	else if(diff >= 0.45){
+		diff = 0.55;
+	}
+	else if(diff >= 0.35){
+		diff = 0.4;
+	}
+	else if(diff >= 0.18){
+		diff = 0.25;
+	}
+	else if(diff >= 0.05){
+		diff = 0.1;
+	}
+	else diff = 0;
 	/* HW2: phong(blinn-phong) shading
 	if(blinn == 1){
 	vec3 halfVec = normalize(lightDirection + viewDirection);
