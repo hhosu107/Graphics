@@ -104,8 +104,8 @@ void ColorModel::Draw(void)
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[0].color"), 0.8f, 0.0f, 0.8f);
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].a"), 1.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.1f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.1f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.0f);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].pos"), 0.0f, -3.0f, 3.0f);
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 1.0f, 1.0f, 1.0f);

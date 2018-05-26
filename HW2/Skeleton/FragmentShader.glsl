@@ -97,6 +97,7 @@ vec3 directionalLight(Directional light, vec3 normal, vec3 viewDirection){
 	return (diffuse + specular);
 }
 
+// TODO: change coolColor, warmColor, alpha, beta as uniform variables of fragment shader: preset them in the colormodel.
 vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 	// imagine that the eye is located at the fragment and see the point light directly (world space)
 	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
@@ -105,7 +106,11 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
 
 	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0);
+	// HW2: phong(blinn-phong) shading
+	// float diff = max(dot(normal, lightDirection), 0.0);
+	// HW3: Gooch Shading
+	float diff = (1.0 + dot(normal, lightDirection))/2;
+	/* HW2: phong(blinn-phong) shading
 	if(blinn == 1){
 	vec3 halfVec = normalize(lightDirection + viewDirection);
 	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
@@ -114,11 +119,24 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
 	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
 	}
+	
 	// light computation with attenuation
 	vec3 diffuse, specular;
 	diffuse = d * diff * light.color;
 	specular = s * spec * light.color;
 	return (diffuse * attenuation + specular * attenuation);
+	*/
+	// HW3: Gooch shading
+	// cool color mixed with color of the object
+	// vec3 coolColorMod = coolColor + fragmentColor * alpha;
+	vec3 coolColorMod = vec3(0.0, 0.7, 0.0) + fragmentColor * 0.3;
+    // warm color mixed with color of the object
+	// vec3 warmColorMod = warmColor + fragmentColor * beta;
+    vec3 warmColorMod = vec3(0.6, 0.0, 0.6) + fragmentColor * 0.4;
+    // interpolation of cool and warm colors according 
+    // to lighting intensity. The lower the light intensity,
+    // the larger part of the cool color is used
+    return mix(coolColorMod, warmColorMod, diff);
 }
 
 vec3 spotLight(Spot light, vec3 normal, vec3 viewDirection){
@@ -152,6 +170,7 @@ void main(){
 	vec3 viewDirection = -normalize((inverse(Eye) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - fragmentWorldPosition); 
 	// color by directional light
 	vec3 intensity = vec3(0.01, 0.01, 0.01); // ambient term initialization
+	/* HW2: phong(blinn-phong) shading
 	for(int i=0; i<3; i++){
 		intensity = intensity + (light[i]) * directionalLight(directional[i], normal, viewDirection);
 	}
@@ -165,6 +184,9 @@ void main(){
 		intensity = intensity + (light[5]) * spotLight(spot, normal, viewDirection);
 	}
 	color = pow(fragmentColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
+	*/
+	intensity = pointLight(point[1], normal, viewDirection);
+	color = intensity;
 }
 
 
