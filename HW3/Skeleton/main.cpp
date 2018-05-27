@@ -410,7 +410,7 @@ int main(void)
 
 	ColorModel r_o1 = ColorModel();
 	AddColorModel(r_o1, outline_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
-	root.AddModel(&r_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	root.AddModel(&r_o1, mat4(1.0f) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	// Multiple objects for same basis
 	ColorModel f1_m1 = ColorModel();
@@ -419,7 +419,7 @@ int main(void)
 
 	ColorModel f1_o1 = ColorModel();
 	AddColorModel(f1_o1, outline_shader, PYRAMID, vec3(1.0f, 0.0f, 0.0f));
-	f_1.AddModel(&f1_o1, translate(mat4(1.0f), vec3(0.0f, 0.5f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_1.AddModel(&f1_o1, translate(mat4(1.0f), vec3(0.0f, 0.5f, 0.0f)) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f1_m2 = ColorModel();
 	AddColorModel(f1_m2, diffuse_shader, PYRAMID, vec3(0.0f, 1.0f, 0.0f));
@@ -427,7 +427,7 @@ int main(void)
 
 	ColorModel f1_o2 = ColorModel();
 	AddColorModel(f1_o2, outline_shader, PYRAMID, vec3(0.0f, 1.0f, 0.0f));
-	f_1.AddModel(&f1_o2, translate(mat4(1.0f), vec3(-0.5f, 0.0f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_1.AddModel(&f1_o2, translate(mat4(1.0f), vec3(-0.5f, 0.0f, 0.0f)) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f1_m3 = ColorModel();
 	AddColorModel(f1_m3, diffuse_shader, PYRAMID, vec3(0.0f, 0.0f, 1.0f));
@@ -435,7 +435,7 @@ int main(void)
 
 	ColorModel f1_o3 = ColorModel();
 	AddColorModel(f1_o3, outline_shader, PYRAMID, vec3(0.0f, 0.0f, 1.0f));
-	f_1.AddModel(&f1_o3, translate(mat4(1.0f), vec3(0.5f, 0.0f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_1.AddModel(&f1_o3, translate(mat4(1.0f), vec3(0.5f, 0.0f, 0.0f)) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f2_m1 = ColorModel();
 	AddColorModel(f2_m1, diffuse_shader, SPHERE, vec3(0.0f, 1.0f, 1.0f));
@@ -443,7 +443,7 @@ int main(void)
 
 	ColorModel f2_o1 = ColorModel();
 	AddColorModel(f2_o1, outline_shader, SPHERE, vec3(0.0f, 1.0f, 1.0f));
-	f_2.AddModel(&f2_o1, mat4(1.0f) * scale(vec3(3.0f, 1.0f, 2.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_2.AddModel(&f2_o1, mat4(1.0f) * scale(vec3(3.0f, 1.0f, 2.0f)) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f3_m1 = ColorModel();
 	AddColorModel(f3_m1, diffuse_shader, CYLINDER, vec3(0.0f, 0.0f, 1.0f));
@@ -451,7 +451,7 @@ int main(void)
 
 	ColorModel f3_o1 = ColorModel();
 	AddColorModel(f3_o1, outline_shader, CYLINDER, vec3(0.0f, 0.0f, 1.0f));
-	f_3.AddModel(&f3_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_3.AddModel(&f3_o1, mat4(1.0f) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f11_m1 = ColorModel();
 	AddColorModel(f11_m1, diffuse_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
@@ -459,7 +459,7 @@ int main(void)
 
 	ColorModel f11_o1 = ColorModel();
 	AddColorModel(f11_o1, outline_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
-	f_11.AddModel(&f11_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_11.AddModel(&f11_o1, mat4(1.0f) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	ColorModel f12_m1 = ColorModel();
 	AddColorModel(f12_m1, diffuse_shader, CUBE, vec3(1.0f, 0.0f, 1.0f));
@@ -467,7 +467,7 @@ int main(void)
 
 	ColorModel f12_o1 = ColorModel();
 	AddColorModel(f12_o1, outline_shader, CUBE, vec3(1.0f, 0.0f, 1.0f));
-	f_12.AddModel(&f12_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+	f_12.AddModel(&f12_o1, mat4(1.0f) * scale(vec3(1.05f, 1.05f, 1.05f)) );
 
 	// 4.
 	root.UpdateObjectFrame();
