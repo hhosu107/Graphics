@@ -1,4 +1,4 @@
-# Install script for directory: E:/Gits/Graphics/HW2
+# Install script for directory: E:/Gits/Graphics/HW3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

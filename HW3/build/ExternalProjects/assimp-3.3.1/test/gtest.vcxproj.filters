@@ -28,7 +28,7 @@
     <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\587fd4e47f2c7f23927a14013bbb210c\gtest.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\test\CMakeLists.txt" />
+    <CustomBuild Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\test\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="E:\Gits\Graphics\HW3\build\ExternalProjects\assimp-3.3.1\test\CMakeFiles\gtest" />

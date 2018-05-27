@@ -1,82 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\Gits\Graphics\HW2\Skeleton\main.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\Skeleton\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\shader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\model.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\colormodel.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\colormodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\linemodel.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\linemodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\texturemodel.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\texturemodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\rtt.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\rtt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\Skeleton\node.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\Skeleton\node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\light.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\common\texture.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\common\texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\shader.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\shader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\affine.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\affine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\geometry.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\geometry.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\model.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\model.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\colormodel.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\colormodel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\linemodel.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\linemodel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\texturemodel.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\texturemodel.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\rtt.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\rtt.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\Skeleton\node.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\Skeleton\node.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\light.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\light.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\common\texture.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\common\texture.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\Gits\Graphics\HW2\CMakeLists.txt" />
+    <CustomBuild Include="E:\Gits\Graphics\HW3\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\VertexShader.glsl" />
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\FragmentShader.glsl" />
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\LineVertexShader.glsl" />
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\LineFragmentShader.glsl" />
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\TextureVertexShader.glsl" />
-    <None Include="E:\Gits\Graphics\HW2\Skeleton\TextureFragmentShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\VertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\FragmentShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\OutlineVertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\OutlineFragmentShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\LineVertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\LineFragmentShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\TextureVertexShader.glsl" />
+    <None Include="E:\Gits\Graphics\HW3\Skeleton\TextureFragmentShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

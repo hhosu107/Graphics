@@ -32,12 +32,13 @@ void Node::AddChild(Node* a_node)
 	a_node->m_level = m_level + 1;
 }
 
+// HW3: Since we will use scaled copy of each model, increase them by 2
 void Node::SetLines(GLuint a_program, mat4 *a_projeciton, mat4 *a_eye)
 {
 	// Compute degree
 	float radian_per_line = 2 * pi<float>() / m_children.size();
 
-	for (int i = 0; i < m_children.size(); i++)
+	for (int i = 0; i < m_children.size(); i+=2) // changed for scaled copies
 	{
 		LineModel a_line = LineModel();
 		a_line.AddLine(vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, line_height / 2.0, 0.0f));
@@ -88,13 +89,15 @@ void Node::BlinnSwitch(void) // Blinn-phong or phong
 		(m_models[j])->BlinnSwitch();
 }
 
+// HW3: Since we will use scaled copy of each model, increase them by 2
 void Node::InitialChildrenFrame(void)
 {
 	// Compute degree
 	float radian_per_line = 2 * pi<float>() / m_children.size();
 
 	// Define child's frame
-	for (int i = 0; i < m_children.size(); i++)
+	// HW3: Since we will use scaled copy of each model, increase them by 2
+	for (int i = 0; i < m_children.size(); i+=2) // changed for scaled copies
 	{
 		// rotate degree and translate to position
 		m_children[i]->m_frame_rbt = rotate(mat4(1.0f), i*radian_per_line, vec3(0.0f, 1.0f, 0.0f)) * translate(mat4(1.0f), vec3(line_width / m_level, line_height, 0.0f));
@@ -102,9 +105,19 @@ void Node::InitialChildrenFrame(void)
 
 		m_children[i]->InitialChildrenFrame();
 	}
+
+	for (int i = 1; i < m_children.size(); i += 2) // changed for scaled copies
+	{
+		// rotate degree and translate to position
+		m_children[i]->m_frame_rbt = rotate(mat4(1.0f), (i-1)*radian_per_line, vec3(0.0f, 1.0f, 0.0f)) * translate(mat4(1.0f), vec3(line_width / m_level, line_height, 0.0f));
+		m_children[i]->m_rbt = m_rbt * m_children[i]->m_frame_rbt;
+
+		m_children[i]->InitialChildrenFrame();
+	}
 }
 
-void Node::UpdateChildrenFrame(void)
+// HW3: Don't have to change since this change is applied for the whole node.
+void Node::UpdateChildrenFrame(void) 
 {
 	// Define child's frame
 	for (int i = 0; i < m_children.size(); i++)
@@ -115,6 +128,7 @@ void Node::UpdateChildrenFrame(void)
 	}
 }
 
+// HW3: Don't have to change since this change is applied for the whole node.
 void Node::UpdateObjectFrame(void)
 {
 	for (int i = 0; i < m_models.size(); i++)
@@ -130,16 +144,21 @@ void Node::UpdateObjectFrame(void)
 	}
 }
 
-void Node::Draw()
+void Node::Draw(int outline)
 {
-	for (int i = 0; i < m_models.size(); i++)
-	{
-		m_models[i]->Draw();
+	if (outline == 0) {
+		for (int i = 0; i < m_models.size(); i += 2) {
+			m_models[i]->Draw();
+		}
+		for (int i = 0; i < m_lines.size(); i++)
+		{
+			m_lines[i].Draw();
+		}
 	}
-
-	for (int i = 0; i < m_lines.size(); i++)
-	{
-		m_lines[i].Draw();
+	else {
+		for (int i = 1; i < m_models.size(); i += 2) {
+			m_models[i]->Draw();
+		}
 	}
 }
 

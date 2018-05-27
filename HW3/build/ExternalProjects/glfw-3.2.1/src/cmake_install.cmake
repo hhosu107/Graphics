@@ -1,4 +1,4 @@
-# Install script for directory: E:/Gits/Graphics/HW2/ExternalProjects/glfw-3.2.1/src
+# Install script for directory: E:/Gits/Graphics/HW3/ExternalProjects/glfw-3.2.1/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

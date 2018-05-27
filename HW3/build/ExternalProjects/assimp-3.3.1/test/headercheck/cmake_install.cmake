@@ -1,4 +1,4 @@
-# Install script for directory: E:/Gits/Graphics/HW2/ExternalProjects/assimp-3.3.1/test/headercheck
+# Install script for directory: E:/Gits/Graphics/HW3/ExternalProjects/assimp-3.3.1/test/headercheck
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

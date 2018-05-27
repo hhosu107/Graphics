@@ -4,7 +4,7 @@
     <CustomBuild Include="E:\Gits\Graphics\HW3\build\CMakeFiles\1c9962da91cba79dc562dfdfa9b59f0f\uninstall.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\glfw-3.2.1\CMakeLists.txt" />
+    <CustomBuild Include="E:\Gits\Graphics\HW3\ExternalProjects\glfw-3.2.1\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="E:\Gits\Graphics\HW3\build\ExternalProjects\glfw-3.2.1\CMakeFiles\uninstall" />

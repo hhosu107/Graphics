@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\glfw-3.2.1\tests\cursor.c">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\glfw-3.2.1\tests\cursor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\glfw-3.2.1\deps\glad.c">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\glfw-3.2.1\deps\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\glfw-3.2.1\deps\glad\glad.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\glfw-3.2.1\deps\glad\glad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\glfw-3.2.1\tests\CMakeLists.txt" />
+    <CustomBuild Include="E:\Gits\Graphics\HW3\ExternalProjects\glfw-3.2.1\tests\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

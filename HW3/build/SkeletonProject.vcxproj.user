@@ -5,28 +5,28 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommand>E:\Gits\Graphics\HW3\build\Debug\SkeletonProject.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW2/Skeleton/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW3/Skeleton/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerEnvironment></LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommand>E:\Gits\Graphics\HW3\build\Release\SkeletonProject.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW2/Skeleton/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW3/Skeleton/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <LocalDebuggerEnvironment></LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommand>E:\Gits\Graphics\HW3\build\MinSizeRel\SkeletonProject.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW2/Skeleton/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW3/Skeleton/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <LocalDebuggerEnvironment></LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommand>E:\Gits\Graphics\HW3\build\RelWithDebInfo\SkeletonProject.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments></LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW2/Skeleton/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>E:/Gits/Graphics/HW3/Skeleton/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 
 </Project>

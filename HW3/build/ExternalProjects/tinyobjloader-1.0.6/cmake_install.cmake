@@ -1,4 +1,4 @@
-# Install script for directory: E:/Gits/Graphics/HW2/ExternalProjects/tinyobjloader-1.0.6
+# Install script for directory: E:/Gits/Graphics/HW3/ExternalProjects/tinyobjloader-1.0.6
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -73,11 +73,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "E:/Gits/Graphics/HW2/ExternalProjects/tinyobjloader-1.0.6/tiny_obj_loader.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "E:/Gits/Graphics/HW3/ExternalProjects/tinyobjloader-1.0.6/tiny_obj_loader.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/tinyobjloader" TYPE FILE FILES "E:/Gits/Graphics/HW2/ExternalProjects/tinyobjloader-1.0.6/LICENSE")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/tinyobjloader" TYPE FILE FILES "E:/Gits/Graphics/HW3/ExternalProjects/tinyobjloader-1.0.6/LICENSE")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

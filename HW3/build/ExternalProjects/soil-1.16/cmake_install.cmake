@@ -1,4 +1,4 @@
-# Install script for directory: E:/Gits/Graphics/HW2/ExternalProjects/soil-1.16
+# Install script for directory: E:/Gits/Graphics/HW3/ExternalProjects/soil-1.16
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

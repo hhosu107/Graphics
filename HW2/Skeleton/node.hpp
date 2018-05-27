@@ -50,7 +50,7 @@ public:
 	void InitialChildrenFrame(void);
 	void UpdateChildrenFrame(void);
 	void UpdateObjectFrame(void);
-	void Draw();
+	void Draw(int outline);
 	void CleanUp(void);
 };
 

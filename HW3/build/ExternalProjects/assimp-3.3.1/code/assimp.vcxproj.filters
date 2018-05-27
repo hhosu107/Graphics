@@ -1,1271 +1,1271 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Assimp.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Assimp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BaseImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BaseImporter.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BaseProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BaseProcess.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PostStepRegistry.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PostStepRegistry.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ImporterRegistry.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ImporterRegistry.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultIOStream.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultIOStream.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultIOSystem.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultIOSystem.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Importer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Importer.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SGSpatialSort.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SGSpatialSort.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\VertexTriangleAdjacency.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\VertexTriangleAdjacency.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SpatialSort.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SpatialSort.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SceneCombiner.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SceneCombiner.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ScenePreprocessor.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ScenePreprocessor.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SkeletonMeshBuilder.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SkeletonMeshBuilder.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SplitByBoneCountProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SplitByBoneCountProcess.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StandardShapes.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StandardShapes.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TargetAnimation.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TargetAnimation.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveComments.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveComments.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Subdivision.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Subdivision.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Bitmap.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Bitmap.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Version.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Version.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultLogger.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultLogger.cpp">
       <Filter>Logging</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Exporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Exporter.cpp">
       <Filter>Exporter</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssimpCExport.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssimpCExport.cpp">
       <Filter>Exporter</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CalcTangentsProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CalcTangentsProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ComputeUVMappingProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ComputeUVMappingProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ConvertToLHProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ConvertToLHProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindDegenerates.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindDegenerates.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindInstancesProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindInstancesProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindInvalidDataProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindInvalidDataProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FixNormalsStep.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FixNormalsStep.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\GenFaceNormalsProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\GenFaceNormalsProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\GenVertexNormalsProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\GenVertexNormalsProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PretransformVertices.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PretransformVertices.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ImproveCacheLocality.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ImproveCacheLocality.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\JoinVerticesProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\JoinVerticesProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LimitBoneWeightsProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LimitBoneWeightsProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveRedundantMaterials.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveRedundantMaterials.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveVCProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveVCProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SortByPTypeProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SortByPTypeProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SplitLargeMeshes.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SplitLargeMeshes.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TextureTransform.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TextureTransform.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TriangulateProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TriangulateProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ValidateDataStructure.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ValidateDataStructure.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OptimizeGraph.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OptimizeGraph.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OptimizeMeshes.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OptimizeMeshes.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DeboneProcess.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DeboneProcess.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ProcessHelper.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ProcessHelper.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MakeVerboseFormat.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MakeVerboseFormat.cpp">
       <Filter>PostProcessing</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MaterialSystem.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MaterialSystem.cpp">
       <Filter>MaterialSystem</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StepExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StepExporter.cpp">
       <Filter>Step</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSConverter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSConverter.cpp">
       <Filter>3DS</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSLoader.cpp">
       <Filter>3DS</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSExporter.cpp">
       <Filter>3DS</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ACLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ACLoader.cpp">
       <Filter>AC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ASELoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ASELoader.cpp">
       <Filter>ASE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ASEParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ASEParser.cpp">
       <Filter>ASE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssbinExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssbinExporter.cpp">
       <Filter>ASSBIN</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssbinLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssbinLoader.cpp">
       <Filter>ASSBIN</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssxmlExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssxmlExporter.cpp">
       <Filter>ASSXML</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\B3DImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\B3DImporter.cpp">
       <Filter>B3D</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BVHLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BVHLoader.cpp">
       <Filter>BVH</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaLoader.cpp">
       <Filter>COLLADA</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaParser.cpp">
       <Filter>COLLADA</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaExporter.cpp">
       <Filter>COLLADA</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DXFLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DXFLoader.cpp">
       <Filter>DXF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CSMLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CSMLoader.cpp">
       <Filter>CSM</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\HMPLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\HMPLoader.cpp">
       <Filter>HMP</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRMeshLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRMeshLoader.cpp">
       <Filter>IRRMESH</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRShared.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRShared.cpp">
       <Filter>IRR</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRLoader.cpp">
       <Filter>IRR</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOAnimation.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOAnimation.cpp">
       <Filter>LWO</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOBLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOBLoader.cpp">
       <Filter>LWO</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOLoader.cpp">
       <Filter>LWO</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOMaterial.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOMaterial.cpp">
       <Filter>LWO</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWSLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWSLoader.cpp">
       <Filter>LWS</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD2Loader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD2Loader.cpp">
       <Filter>MD2</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD3Loader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD3Loader.cpp">
       <Filter>MD3</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD5Loader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD5Loader.cpp">
       <Filter>MD5</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD5Parser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD5Parser.cpp">
       <Filter>MD5</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDCLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDCLoader.cpp">
       <Filter>MDC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDLLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDLLoader.cpp">
       <Filter>MDL</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDLMaterialLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDLMaterialLoader.cpp">
       <Filter>MDL</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\NFFLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\NFFLoader.cpp">
       <Filter>NFF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\NDOLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\NDOLoader.cpp">
       <Filter>NDO</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OFFLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OFFLoader.cpp">
       <Filter>OFF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileImporter.cpp">
       <Filter>OBJ</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileMtlImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileMtlImporter.cpp">
       <Filter>OBJ</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileParser.cpp">
       <Filter>OBJ</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjExporter.cpp">
       <Filter>OBJ</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreImporter.cpp">
       <Filter>OGRE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreStructs.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreStructs.cpp">
       <Filter>OGRE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreBinarySerializer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreBinarySerializer.cpp">
       <Filter>OGRE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreXmlSerializer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreXmlSerializer.cpp">
       <Filter>OGRE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreMaterial.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreMaterial.cpp">
       <Filter>OGRE</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OpenGEXExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OpenGEXExporter.cpp">
       <Filter>OPENGEX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OpenGEXImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OpenGEXImporter.cpp">
       <Filter>OPENGEX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyLoader.cpp">
       <Filter>PLY</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyParser.cpp">
       <Filter>PLY</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyExporter.cpp">
       <Filter>PLY</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MS3DLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MS3DLoader.cpp">
       <Filter>MS3D</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\COBLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\COBLoader.cpp">
       <Filter>COB</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderLoader.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderDNA.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderDNA.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderScene.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderScene.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderModifier.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderModifier.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderBMesh.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderBMesh.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderTessellator.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderTessellator.cpp">
       <Filter>BLEND</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCLoader.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCReaderGen.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCReaderGen.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCUtil.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCUtil.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCGeometry.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCGeometry.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCMaterial.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCMaterial.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCProfile.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCProfile.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCCurve.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCCurve.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCBoolean.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCBoolean.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCOpenings.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCOpenings.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STEPFileReader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STEPFileReader.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STEPFileEncoding.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STEPFileEncoding.cpp">
       <Filter>IFC</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XGLLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XGLLoader.cpp">
       <Filter>XGL</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXImporter.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXParser.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXTokenizer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXTokenizer.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXConverter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXConverter.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXUtil.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXUtil.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXDocument.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXDocument.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXProperties.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXProperties.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXMeshGeometry.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXMeshGeometry.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXMaterial.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXMaterial.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXModel.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXModel.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXAnimation.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXAnimation.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXNodeAttribute.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXNodeAttribute.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXDeformer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXDeformer.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXBinaryTokenizer.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXBinaryTokenizer.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXDocumentUtil.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXDocumentUtil.cpp">
       <Filter>FBX</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3DLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3DLoader.cpp">
       <Filter>Q3D</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPFileParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPFileParser.cpp">
       <Filter>Q3BSP</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPFileImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPFileImporter.cpp">
       <Filter>Q3BSP</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPZipArchive.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPZipArchive.cpp">
       <Filter>Q3BSP</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RawLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RawLoader.cpp">
       <Filter>RAW</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SIBImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SIBImporter.cpp">
       <Filter>SIB</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SMDLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SMDLoader.cpp">
       <Filter>SMD</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STLLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STLLoader.cpp">
       <Filter>STL</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STLExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STLExporter.cpp">
       <Filter>STL</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TerragenLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TerragenLoader.cpp">
       <Filter>TERRAGEN</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\UnrealLoader.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\UnrealLoader.cpp">
       <Filter>3D</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileImporter.cpp">
       <Filter>X</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileParser.cpp">
       <Filter>X</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileExporter.cpp">
       <Filter>X</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFImporter.cpp">
       <Filter>GLTF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFExporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFExporter.cpp">
       <Filter>GLTF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\D3MFImporter.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\D3MFImporter.cpp">
       <Filter>3MF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\D3MFOpcPackage.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\D3MFOpcPackage.cpp">
       <Filter>3MF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrXML.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrXML.cpp">
       <Filter>IrrXML</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\ConvertUTF\ConvertUTF.c">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\ConvertUTF\ConvertUTF.c">
       <Filter>ConvertUTF</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\unzip\ioapi.c">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\unzip\ioapi.c">
       <Filter>unzip</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\unzip\unzip.c">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\unzip\unzip.c">
       <Filter>unzip</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\shapes.cc">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\shapes.cc">
       <Filter>Poly2Tri</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\advancing_front.cc">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\advancing_front.cc">
       <Filter>Poly2Tri</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\cdt.cc">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\cdt.cc">
       <Filter>Poly2Tri</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep.cc">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep.cc">
       <Filter>Poly2Tri</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep_context.cc">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep_context.cc">
       <Filter>Poly2Tri</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\clipper\clipper.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\clipper\clipper.cpp">
       <Filter>Clipper</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLParser.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLParser.cpp">
       <Filter>openddl_parser</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\DDLNode.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\DDLNode.cpp">
       <Filter>openddl_parser</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLCommon.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLCommon.cpp">
       <Filter>openddl_parser</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLExport.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\OpenDDLExport.cpp">
       <Filter>openddl_parser</Filter>
     </ClCompile>
-    <ClCompile Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\Value.cpp">
+    <ClCompile Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\code\Value.cpp">
       <Filter>openddl_parser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\fast_atof.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\fast_atof.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\qnan.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\qnan.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BaseImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BaseImporter.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BaseProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BaseProcess.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Importer.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Importer.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ScenePrivate.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ScenePrivate.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ByteSwapper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ByteSwapper.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultProgressHandler.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultProgressHandler.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultIOStream.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultIOStream.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DefaultIOSystem.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DefaultIOSystem.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CInterfaceIOWrapper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CInterfaceIOWrapper.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Hash.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Hash.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFF.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFF.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MemoryIOWrapper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MemoryIOWrapper.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ParsingUtils.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ParsingUtils.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StreamReader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StreamReader.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StreamWriter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StreamWriter.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StringComparison.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StringComparison.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StringUtils.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StringUtils.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SGSpatialSort.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SGSpatialSort.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\VertexTriangleAdjacency.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\VertexTriangleAdjacency.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\GenericProperty.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\GenericProperty.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SpatialSort.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SpatialSort.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SceneCombiner.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SceneCombiner.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ScenePreprocessor.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ScenePreprocessor.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SkeletonMeshBuilder.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SkeletonMeshBuilder.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SplitByBoneCountProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SplitByBoneCountProcess.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SmoothingGroups.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SmoothingGroups.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StandardShapes.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StandardShapes.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TargetAnimation.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TargetAnimation.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveComments.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveComments.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Subdivision.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Subdivision.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Vertex.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Vertex.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LineSplitter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LineSplitter.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TinyFormatter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TinyFormatter.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Profiler.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Profiler.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LogAux.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LogAux.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Bitmap.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Bitmap.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XMLTools.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XMLTools.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\DefaultLogger.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\DefaultLogger.hpp">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\LogStream.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\LogStream.hpp">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Logger.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Logger.hpp">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\NullLogger.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\NullLogger.hpp">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Win32DebugLogStream.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Win32DebugLogStream.h">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FileLogStream.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FileLogStream.h">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StdOStreamLogStream.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StdOStreamLogStream.h">
       <Filter>Logging</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlobIOSystem.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlobIOSystem.h">
       <Filter>Exporter</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CalcTangentsProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CalcTangentsProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ComputeUVMappingProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ComputeUVMappingProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ConvertToLHProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ConvertToLHProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindDegenerates.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindDegenerates.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindInstancesProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindInstancesProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FindInvalidDataProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FindInvalidDataProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FixNormalsStep.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FixNormalsStep.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\GenFaceNormalsProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\GenFaceNormalsProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\GenVertexNormalsProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\GenVertexNormalsProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PretransformVertices.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PretransformVertices.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ImproveCacheLocality.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ImproveCacheLocality.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\JoinVerticesProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\JoinVerticesProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LimitBoneWeightsProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LimitBoneWeightsProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveRedundantMaterials.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveRedundantMaterials.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RemoveVCProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RemoveVCProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SortByPTypeProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SortByPTypeProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SplitLargeMeshes.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SplitLargeMeshes.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TextureTransform.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TextureTransform.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TriangulateProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TriangulateProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ValidateDataStructure.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ValidateDataStructure.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OptimizeGraph.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OptimizeGraph.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OptimizeMeshes.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OptimizeMeshes.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DeboneProcess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DeboneProcess.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ProcessHelper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ProcessHelper.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PolyTools.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PolyTools.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MakeVerboseFormat.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MakeVerboseFormat.h">
       <Filter>PostProcessing</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MaterialSystem.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MaterialSystem.h">
       <Filter>MaterialSystem</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\StepExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\StepExporter.h">
       <Filter>Step</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSHelper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSHelper.h">
       <Filter>3DS</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSLoader.h">
       <Filter>3DS</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\3DSExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\3DSExporter.h">
       <Filter>3DS</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ACLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ACLoader.h">
       <Filter>AC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ASELoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ASELoader.h">
       <Filter>ASE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ASEParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ASEParser.h">
       <Filter>ASE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssbinExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssbinExporter.h">
       <Filter>ASSBIN</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssbinLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssbinLoader.h">
       <Filter>ASSBIN</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\AssxmlExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\AssxmlExporter.h">
       <Filter>ASSXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\B3DImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\B3DImporter.h">
       <Filter>B3D</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BVHLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BVHLoader.h">
       <Filter>BVH</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaHelper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaHelper.h">
       <Filter>COLLADA</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaLoader.h">
       <Filter>COLLADA</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaParser.h">
       <Filter>COLLADA</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ColladaExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ColladaExporter.h">
       <Filter>COLLADA</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DXFLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DXFLoader.h">
       <Filter>DXF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\DXFHelper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\DXFHelper.h">
       <Filter>DXF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CSMLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CSMLoader.h">
       <Filter>CSM</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\HMPFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\HMPFileData.h">
       <Filter>HMP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\HMPLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\HMPLoader.h">
       <Filter>HMP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\HalfLifeFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\HalfLifeFileData.h">
       <Filter>HMP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRMeshLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRMeshLoader.h">
       <Filter>IRRMESH</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRShared.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRShared.h">
       <Filter>IRR</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IRRLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IRRLoader.h">
       <Filter>IRR</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOAnimation.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOAnimation.h">
       <Filter>LWO</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOFileData.h">
       <Filter>LWO</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWOLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWOLoader.h">
       <Filter>LWO</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\LWSLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\LWSLoader.h">
       <Filter>LWS</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD2FileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD2FileData.h">
       <Filter>MD2</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD2Loader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD2Loader.h">
       <Filter>MD2</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD2NormalTable.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD2NormalTable.h">
       <Filter>MD2</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD3FileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD3FileData.h">
       <Filter>MD3</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD3Loader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD3Loader.h">
       <Filter>MD3</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD5Loader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD5Loader.h">
       <Filter>MD5</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MD5Parser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MD5Parser.h">
       <Filter>MD5</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDCFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDCFileData.h">
       <Filter>MDC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDCLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDCLoader.h">
       <Filter>MDC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDCNormalTable.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDCNormalTable.h">
       <Filter>MDC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDLDefaultColorMap.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDLDefaultColorMap.h">
       <Filter>MDL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDLFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDLFileData.h">
       <Filter>MDL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MDLLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MDLLoader.h">
       <Filter>MDL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\NFFLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\NFFLoader.h">
       <Filter>NFF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\NDOLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\NDOLoader.h">
       <Filter>NDO</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OFFLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OFFLoader.h">
       <Filter>OFF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileData.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileImporter.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileMtlImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileMtlImporter.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjFileParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjFileParser.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjTools.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjTools.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\ObjExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\ObjExporter.h">
       <Filter>OBJ</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreImporter.h">
       <Filter>OGRE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreStructs.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreStructs.h">
       <Filter>OGRE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreParsingUtils.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreParsingUtils.h">
       <Filter>OGRE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreBinarySerializer.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreBinarySerializer.h">
       <Filter>OGRE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OgreXmlSerializer.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OgreXmlSerializer.h">
       <Filter>OGRE</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OpenGEXExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OpenGEXExporter.h">
       <Filter>OPENGEX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OpenGEXImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OpenGEXImporter.h">
       <Filter>OPENGEX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\OpenGEXStructs.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\OpenGEXStructs.h">
       <Filter>OPENGEX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyLoader.h">
       <Filter>PLY</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyParser.h">
       <Filter>PLY</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\PlyExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\PlyExporter.h">
       <Filter>PLY</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\MS3DLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\MS3DLoader.h">
       <Filter>MS3D</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\COBLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\COBLoader.h">
       <Filter>COB</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\COBScene.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\COBScene.h">
       <Filter>COB</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderLoader.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderDNA.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderDNA.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderDNA.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderDNA.inl">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderScene.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderScene.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderSceneGen.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderSceneGen.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderIntermediate.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderIntermediate.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderModifier.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderModifier.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderBMesh.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderBMesh.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\BlenderTessellator.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\BlenderTessellator.h">
       <Filter>BLEND</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCLoader.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCReaderGen.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCReaderGen.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\IFCUtil.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\IFCUtil.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STEPFile.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STEPFile.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STEPFileReader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STEPFileReader.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STEPFileEncoding.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STEPFileEncoding.h">
       <Filter>IFC</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XGLLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XGLLoader.h">
       <Filter>XGL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXCompileConfig.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXCompileConfig.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXImporter.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXParser.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXTokenizer.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXTokenizer.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXImportSettings.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXImportSettings.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXConverter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXConverter.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXUtil.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXUtil.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXDocument.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXDocument.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXProperties.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXProperties.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\FBXMeshGeometry.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\FBXMeshGeometry.h">
       <Filter>FBX</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3DLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3DLoader.h">
       <Filter>Q3D</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPFileData.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPFileData.h">
       <Filter>Q3BSP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPFileParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPFileParser.h">
       <Filter>Q3BSP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPFileImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPFileImporter.h">
       <Filter>Q3BSP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\Q3BSPZipArchive.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\Q3BSPZipArchive.h">
       <Filter>Q3BSP</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\RawLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\RawLoader.h">
       <Filter>RAW</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SIBImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SIBImporter.h">
       <Filter>SIB</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\SMDLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\SMDLoader.h">
       <Filter>SMD</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STLLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STLLoader.h">
       <Filter>STL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\STLExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\STLExporter.h">
       <Filter>STL</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\TerragenLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\TerragenLoader.h">
       <Filter>TERRAGEN</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\UnrealLoader.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\UnrealLoader.h">
       <Filter>3D</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileHelper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileHelper.h">
       <Filter>X</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileImporter.h">
       <Filter>X</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileParser.h">
       <Filter>X</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\XFileExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\XFileExporter.h">
       <Filter>X</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFAsset.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFAsset.h">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFAsset.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFAsset.inl">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFAssetWriter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFAssetWriter.h">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFAssetWriter.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFAssetWriter.inl">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFImporter.h">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\glTFExporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\glTFExporter.h">
       <Filter>GLTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\D3MFImporter.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\D3MFImporter.h">
       <Filter>3MF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\D3MFOpcPackage.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\D3MFOpcPackage.h">
       <Filter>3MF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\irrXMLWrapper.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\irrXMLWrapper.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\CXMLReaderImpl.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\CXMLReaderImpl.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\heapsort.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\heapsort.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrArray.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrArray.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrString.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrString.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrTypes.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrTypes.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrXML.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\irrXML\irrXML.h">
       <Filter>IrrXML</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\ConvertUTF\ConvertUTF.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\ConvertUTF\ConvertUTF.h">
       <Filter>ConvertUTF</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\unzip\crypt.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\unzip\crypt.h">
       <Filter>unzip</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\unzip\ioapi.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\unzip\ioapi.h">
       <Filter>unzip</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\unzip\unzip.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\unzip\unzip.h">
       <Filter>unzip</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\shapes.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\shapes.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\utils.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\common\utils.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\advancing_front.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\advancing_front.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\cdt.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\cdt.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep_context.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\poly2tri\poly2tri\sweep\sweep_context.h">
       <Filter>Poly2Tri</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\clipper\clipper.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\clipper\clipper.hpp">
       <Filter>Clipper</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLParser.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLParser.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLParserUtils.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLParserUtils.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLCommon.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLCommon.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLExport.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\OpenDDLExport.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\DDLNode.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\DDLNode.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\Value.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\contrib\openddlparser\include\openddlparser\Value.h">
       <Filter>openddl_parser</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\anim.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\anim.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\ai_assert.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\ai_assert.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\camera.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\color4.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\color4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\color4.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\color4.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\config.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\defs.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\defs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\cfileio.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\cfileio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\light.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\material.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\material.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\material.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\material.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\matrix3x3.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\matrix3x3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\matrix3x3.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\matrix3x3.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\matrix4x4.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\matrix4x4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\matrix4x4.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\matrix4x4.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\mesh.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\postprocess.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\postprocess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\quaternion.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\quaternion.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\quaternion.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\scene.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\metadata.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\metadata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\texture.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\types.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\vector2.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\vector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\vector2.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\vector2.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\vector3.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\vector3.inl">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\vector3.inl">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\version.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\cimport.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\cimport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\importerdesc.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\importerdesc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Importer.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Importer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\ProgressHandler.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\ProgressHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\IOStream.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\IOStream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\IOSystem.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\IOSystem.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\cexport.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\cexport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Exporter.hpp">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Exporter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\pushpack1.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\pushpack1.h">
       <Filter>Compiler</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\poppack1.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\poppack1.h">
       <Filter>Compiler</Filter>
     </ClInclude>
-    <ClInclude Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\pstdint.h">
+    <ClInclude Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\include\assimp\Compiler\pstdint.h">
       <Filter>Compiler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="E:\Gits\Graphics\HW2\ExternalProjects\assimp-3.3.1\code\CMakeLists.txt" />
+    <CustomBuild Include="E:\Gits\Graphics\HW3\ExternalProjects\assimp-3.3.1\code\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="3D">

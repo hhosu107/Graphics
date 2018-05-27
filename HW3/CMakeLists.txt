@@ -84,6 +84,8 @@ add_executable(SkeletonProject
   # shader definition
   Skeleton/VertexShader.glsl
   Skeleton/FragmentShader.glsl
+  Skeleton/OutlineVertexShader.glsl
+  Skeleton/OutlineFragmentShader.glsl
   Skeleton/LineVertexShader.glsl
   Skeleton/LineFragmentShader.glsl
   Skeleton/TextureVertexShader.glsl

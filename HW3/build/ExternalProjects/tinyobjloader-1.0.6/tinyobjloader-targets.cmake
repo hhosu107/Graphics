@@ -45,7 +45,7 @@ unset(_expectedTargets)
 add_library(tinyobjloader STATIC IMPORTED)
 
 set_target_properties(tinyobjloader PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "E:/Gits/Graphics/HW2/ExternalProjects/tinyobjloader-1.0.6"
+  INTERFACE_INCLUDE_DIRECTORIES "E:/Gits/Graphics/HW3/ExternalProjects/tinyobjloader-1.0.6"
 )
 
 # Import target "tinyobjloader" for configuration "Debug"
