@@ -557,6 +557,8 @@ int main(void)
 		// Clear the screen	
 		// Fill the background
 
+		glEnable(GL_STENCIL_TEST);
+
 		double current_time = glfwGetTime();
 		double elapsed_time = current_time - prev_time;
 
@@ -570,9 +572,11 @@ int main(void)
 
 		//render_to_texture.BindFBO();
 		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+		glClearStencil(0);
 
 		// 5. Draw
+		glStencilMask(0x00);
 		for (int i = 0; i < 6; i++) {
 			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
 			surround[i].Draw();
@@ -581,6 +585,13 @@ int main(void)
 		// For example, add a parameter for Draw() function as Draw(int) to recognize whether or not the scaled version should be drawn.
 
 		// HW3: Enable stencil buffer for the original objects 
+
+		glCullFace(GL_FRONT);
+		for (int i = 0; i < g_nodes.size(); i++) {
+			g_nodes[i]->Draw(1);
+		}
+		glCullFace(GL_BACK);
+
 		glStencilFunc(GL_ALWAYS, 1, 0xFF);
 		glStencilMask(0xFF);
 		for (int i = 0; i < g_nodes.size(); i++)
