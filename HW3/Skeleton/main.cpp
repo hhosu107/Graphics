@@ -321,7 +321,7 @@ int main(void)
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	// Open a window and create its OpenGL context
-	g_window = glfwCreateWindow(1024, 768, "Homework 2: 20173245 - Chansu Park", NULL, NULL);
+	g_window = glfwCreateWindow(1024, 768, "Homework 3: 20173245 - Chansu Park", NULL, NULL);
 
 	if (g_window == NULL) {
 		fprintf(stderr, "Failed to open GLFW window.");
@@ -368,6 +368,7 @@ int main(void)
 
 	// Initialize shader program (for efficiency)
 	GLuint diffuse_shader = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
+	GLuint outline_shader = LoadShaders("OutlineVertexShader.glsl", "OutlineFragmentShader.glsl");
 	GLuint line_shader = LoadShaders("LineVertexShader.glsl", "LineFragmentShader.glsl");
 	GLuint texture_shader = LoadShaders("TextureVertexShader.glsl", "TextureFragmentShader.glsl");
 
@@ -401,38 +402,72 @@ int main(void)
 	}
 
 	// 3.
+	// HW3: To enable outlining, copy each model, scale them by 1.02, use different shader, and then draw them with stencil masking.
+	// TODO: Change definitions in node.cpp to adjust InitialChildrenFrame: attach at the same relative location for scaled models
 	ColorModel r_m1 = ColorModel();
 	AddColorModel(r_m1, diffuse_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
 	root.AddModel(&r_m1, mat4(1.0f));
+
+	ColorModel r_o1 = ColorModel();
+	AddColorModel(r_o1, outline_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
+	root.AddModel(&r_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
 
 	// Multiple objects for same basis
 	ColorModel f1_m1 = ColorModel();
 	AddColorModel(f1_m1, diffuse_shader, PYRAMID, vec3(1.0f, 0.0f, 0.0f));
 	f_1.AddModel(&f1_m1, translate(mat4(1.0f), vec3(0.0f, 0.5f, 0.0f)));
 
+	ColorModel f1_o1 = ColorModel();
+	AddColorModel(f1_o1, outline_shader, PYRAMID, vec3(1.0f, 0.0f, 0.0f));
+	f_1.AddModel(&f1_o1, translate(mat4(1.0f), vec3(0.0f, 0.5f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+
 	ColorModel f1_m2 = ColorModel();
 	AddColorModel(f1_m2, diffuse_shader, PYRAMID, vec3(0.0f, 1.0f, 0.0f));
 	f_1.AddModel(&f1_m2, translate(mat4(1.0f), vec3(-0.5f, 0.0f, 0.0f)));
+
+	ColorModel f1_o2 = ColorModel();
+	AddColorModel(f1_o2, outline_shader, PYRAMID, vec3(0.0f, 1.0f, 0.0f));
+	f_1.AddModel(&f1_o2, translate(mat4(1.0f), vec3(-0.5f, 0.0f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
 
 	ColorModel f1_m3 = ColorModel();
 	AddColorModel(f1_m3, diffuse_shader, PYRAMID, vec3(0.0f, 0.0f, 1.0f));
 	f_1.AddModel(&f1_m3, translate(mat4(1.0f), vec3(0.5f, 0.0f, 0.0f)));
 
+	ColorModel f1_o3 = ColorModel();
+	AddColorModel(f1_o3, outline_shader, PYRAMID, vec3(0.0f, 0.0f, 1.0f));
+	f_1.AddModel(&f1_o3, translate(mat4(1.0f), vec3(0.5f, 0.0f, 0.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+
 	ColorModel f2_m1 = ColorModel();
 	AddColorModel(f2_m1, diffuse_shader, SPHERE, vec3(0.0f, 1.0f, 1.0f));
 	f_2.AddModel(&f2_m1, mat4(1.0f) * scale(vec3(3.0f, 1.0f, 2.0f)));
+
+	ColorModel f2_o1 = ColorModel();
+	AddColorModel(f2_o1, outline_shader, SPHERE, vec3(0.0f, 1.0f, 1.0f));
+	f_2.AddModel(&f2_o1, mat4(1.0f) * scale(vec3(3.0f, 1.0f, 2.0f)) * scale(vec3(1.03f, 1.03f, 1.03f)) );
 
 	ColorModel f3_m1 = ColorModel();
 	AddColorModel(f3_m1, diffuse_shader, CYLINDER, vec3(0.0f, 0.0f, 1.0f));
 	f_3.AddModel(&f3_m1, mat4(1.0f));
 
+	ColorModel f3_o1 = ColorModel();
+	AddColorModel(f3_o1, outline_shader, CYLINDER, vec3(0.0f, 0.0f, 1.0f));
+	f_3.AddModel(&f3_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+
 	ColorModel f11_m1 = ColorModel();
 	AddColorModel(f11_m1, diffuse_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
 	f_11.AddModel(&f11_m1, mat4(1.0f));
 
+	ColorModel f11_o1 = ColorModel();
+	AddColorModel(f11_o1, outline_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
+	f_11.AddModel(&f11_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
+
 	ColorModel f12_m1 = ColorModel();
 	AddColorModel(f12_m1, diffuse_shader, CUBE, vec3(1.0f, 0.0f, 1.0f));
 	f_12.AddModel(&f12_m1, mat4(1.0f));
+
+	ColorModel f12_o1 = ColorModel();
+	AddColorModel(f12_o1, outline_shader, CUBE, vec3(1.0f, 0.0f, 1.0f));
+	f_12.AddModel(&f12_o1, mat4(1.0f) * scale(vec3(1.03f, 1.03f, 1.03f)) );
 
 	// 4.
 	root.UpdateObjectFrame();
@@ -538,23 +573,40 @@ int main(void)
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		// 5. Draw
+		for (int i = 0; i < 6; i++) {
+			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
+			surround[i].Draw();
+		}
+		// TODO: HW3: should we control stencil buffer on this ? Yes.
+		// For example, add a parameter for Draw() function as Draw(int) to recognize whether or not the scaled version should be drawn.
+
+		// HW3: Enable stencil buffer for the original objects 
+		glStencilFunc(GL_ALWAYS, 1, 0xFF);
+		glStencilMask(0xFF);
 		for (int i = 0; i < g_nodes.size(); i++)
 		{
 			if (i == g_nodes_index)
 			{
 				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-				g_nodes[i]->Draw();
+				g_nodes[i]->Draw(0);
 				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			}
 			else
 			{
-				g_nodes[i]->Draw();
+				g_nodes[i]->Draw(0);
 			}
 		}
-		for (int i = 0; i < 6; i++) {
-			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
-			surround[i].Draw();
+		// HW3: Disable stencil buffer and depth test for the scaled objects
+		/*
+		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+		glStencilMask(0x00);
+		glDisable(GL_DEPTH_TEST);
+		for (int i = 0; i < g_nodes.size(); i++) {
+			g_nodes[i]->Draw(1);
 		}
+		glStencilMask(0xFF);
+		glEnable(GL_DEPTH_TEST);
+		*/
 
 		// Swap buffers
 		glfwSwapBuffers(g_window);

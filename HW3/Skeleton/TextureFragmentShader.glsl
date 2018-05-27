@@ -149,6 +149,7 @@ vec3 spotLight(Spot light, vec3 normal, vec3 viewDirection){
 }
 
 void main(){
+/*
 	// fragment normal on world space
 	vec3 normal = normalize(fragmentWorldNormal);
 	// fragment view direction on world space: first represent the eye on the world coordinate and then compute the view vector
@@ -167,6 +168,8 @@ void main(){
 	if(acos(dot(-spotDirection, normalize(spot.dir))) < spot.cutoff){
 		intensity = intensity + (light[5]) * spotLight(spot, normal, viewDirection);
 	}
+	*/
 	vec3 textureColor = texture(tex, fragmentUV).xyz; // texture's real color
-	color = pow(textureColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
+	color = textureColor;
+	// color = pow(textureColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
 }
