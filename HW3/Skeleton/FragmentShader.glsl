@@ -110,7 +110,7 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 	// float diff = max(dot(normal, lightDirection), 0.0);
 	// HW3: Gooch Shading
 	float diff = (1.0 + dot(normal, lightDirection))/2;
-	/*
+	
 	if (diff >= 0.93){
 		diff = 1.0;
 	}
@@ -133,7 +133,7 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
 		diff = 0.1;
 	}
 	else diff = 0;
-	*/
+	
 	/* HW2: phong(blinn-phong) shading
 	if(blinn == 1){
 	vec3 halfVec = normalize(lightDirection + viewDirection);
@@ -162,6 +162,25 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
     // the larger part of the cool color is used
     return mix(coolColorMod, warmColorMod, diff);
 }
+
+vec3 blinnPointLight(Point light, vec3 normal, vec3 viewDirection){
+	// imagine that the eye is located at the fragment and see the point light directly (world space)
+	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
+	float spec;
+	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
+	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
+
+	float diff = max(dot(normal, lightDirection), 0.0);
+	vec3 halfVec = normalize(lightDirection + viewDirection);
+	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
+	
+	// light computation with attenuation
+	vec3 diffuse, specular;
+	diffuse = d * diff * light.color;
+	specular = s * spec * light.color;
+	return (diffuse * attenuation + specular * attenuation);
+}
+
 
 vec3 spotLight(Spot light, vec3 normal, vec3 viewDirection){
 	// imagine that the eye is located at the fragment and see the point light directly (world space)
@@ -209,8 +228,14 @@ void main(){
 	}
 	color = pow(fragmentColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
 	*/
-	intensity = pointLight(point[1], normal, viewDirection);
-	color = intensity;
+	if(blinn == 0){
+		intensity = pointLight(point[1], normal, viewDirection);
+		color = intensity;
+	}
+	else{
+		intensity = intensity + blinnPointLight(point[1], normal, viewDirection);
+		color = pow(fragmentColor * intensity, vec3(1.0/2.2));
+	}
 }
 
 
