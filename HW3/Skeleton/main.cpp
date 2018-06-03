@@ -199,8 +199,8 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 		case GLFW_KEY_H:
 			cout << "CS580 Homework Assignment 1" << endl;
 			cout << "keymaps:" << endl;
-			cout << "h\t\t Help command" << endl;
-			cout << "p\t\t Enable/Disable picking" << endl;
+			cout << "h\t\t Help command" << endl;/*
+			cout << "p\t\t Enable/Disable picking" << endl;*/
 			cout << "o\t\t Pick the next object" << endl;
 			cout << "n\t\t Change the rotation speed of the current object by -10 degree per sec according to the local y-axis" << endl;
 			cout << "m\t\t Change the rotation speed of the current object by 10 degree per sec according to the local y-axis" << endl;
@@ -211,10 +211,10 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			cout << "right button\t\t move the eye by 1 along x-axis" << endl;
 			cout << "left bracket\t\t move the eye by -1 along z-axis" << endl;
 			cout << "right bracket\t\t move the eye by 1 along z-axis" << endl;
-			cout << "b\t\t switch between blinn-phong and phong lighting" << endl;
+			cout << "b\t\t switch between blinn-phong and phong lighting" << endl;/*
 			cout << "1-3\t\t turn on/off the red/blue/green directional lights" << endl;
 			cout << "4-5\t\t turn on/off two point lights" << endl;
-			cout << "6\t\t turn on/off the spot light" << endl;
+			cout << "6\t\t turn on/off the spot light" << endl;*/
 			cout << "7\t\t Change the rotation speed of the point light by -1 radian per sec according to the x-axis" << endl;
 			cout << "8\t\t Change the rotation speed of the point light by 1 radian per sec according to the x-axis" << endl;
 			break;
@@ -256,7 +256,7 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			for (int i = 0; i < 6; i++) {
 				(&surround[i])->BlinnSwitch();
 			}
-			break;
+			break;/*
 		case GLFW_KEY_1:
 			for (int i = 0; i < g_nodes.size(); i++) {
 				g_nodes[i]->LightSwitch(0);
@@ -304,7 +304,7 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			for (int i = 0; i < 6; i++) {
 				(&surround[i])->Switch(5);
 			}
-			break;
+			break;*/
 		case GLFW_KEY_7:
 			light_speed -= 1.0f;
 			break;
