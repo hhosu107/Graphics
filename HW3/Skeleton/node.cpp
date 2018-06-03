@@ -134,20 +134,27 @@ void Node::UpdateObjectFrame(void)
 	}
 }
 
-void Node::Draw(int outline)
+void Node::SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos) {
+/* 	for (int i = 0; i < m_models.size(); i += 2) {
+		m_models[i]->SetDepth(shadowTransforms, far_plane, lightPos);
+	}
+	*/
+}
+
+void Node::Draw(int outline, vec3 lightPos = vec3(0.0f, -3.0f, 3.0f))
 {
 	if (outline == 0) {
 		for (int i = 0; i < m_models.size(); i += 2) {
-			m_models[i]->Draw();
+			m_models[i]->Draw(lightPos);
 		}
 		for (int i = 0; i < m_lines.size(); i++)
 		{
-			m_lines[i].Draw();
+			m_lines[i].Draw(lightPos);
 		}
 	}
 	else {
 		for (int i = 1; i < m_models.size(); i += 2) {
-			m_models[i]->Draw();
+			m_models[i]->Draw(lightPos);
 		}
 	}
 }

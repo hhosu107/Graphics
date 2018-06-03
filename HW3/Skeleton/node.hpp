@@ -50,8 +50,9 @@ public:
 	void InitialChildrenFrame(void);
 	void UpdateChildrenFrame(void);
 	void UpdateObjectFrame(void);
-	void Draw(int outline);
+	void Draw(int outline, vec3 lightPos);
 	void CleanUp(void);
+	void SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos);
 };
 
 #endif

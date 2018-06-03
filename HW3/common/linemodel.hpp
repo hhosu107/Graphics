@@ -16,8 +16,9 @@ public:
 	void AddLine(vec3 a_start, vec3 a_end);
 	// Set a shader program for this model and transfer data to vertex buffers 
 	void InitializeGLSL(DRAW_TYPE a_type);
+	//void SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos);
 	// Draw function
-	void Draw(void);
+	void Draw(vec3 lightPos);
 	// Clean up all resources
 	void CleanUp(void);
 };

@@ -160,7 +160,7 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
     // interpolation of cool and warm colors according 
     // to lighting intensity. The lower the light intensity,
     // the larger part of the cool color is used
-    return mix(coolColorMod, warmColorMod, diff);
+    return attenuation * mix(coolColorMod, warmColorMod, diff);
 }
 
 vec3 blinnPointLight(Point light, vec3 normal, vec3 viewDirection){

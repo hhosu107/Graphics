@@ -54,10 +54,11 @@ public:
 	void BlinnSwitch();
 	// Set glsl program to this model
 	void SetProgram(GLuint a_program_id);
+	//virtual void SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos);
 	// Set a shader program for this model and transfer data to vertex buffers (abstract function)
 	virtual void InitializeGLSL(DRAW_TYPE a_draw_type) = 0;
-	// Draw function (abstract)
-	virtual void Draw(void) = 0;
+	// Draw function with light position (abstract)
+	virtual void Draw(vec3 lightPos) = 0;
 	// Clean up all resources (abstract)
 	virtual void CleanUp(void) = 0;
 };

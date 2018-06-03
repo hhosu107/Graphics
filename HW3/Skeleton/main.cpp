@@ -53,12 +53,18 @@ mat4 g_eye_rbt;
 // World model property
 mat4 g_world_rbt = mat4(1.0f);
 
+// light position
+vec3 lightPos = vec3(0.0f, -3.0f, 3.0f);
+float light_speed = 3.0f;
+
 // Render To Texture
 RTT render_to_texture;
 // Render surround walls and floor/ceiling
 RTT surround_rtt[6];
 // Texture model of surround walls
 TextureModel surround[6];
+
+GLuint depthMapFBO;
 
 // SOIL texture loading
 /*
@@ -209,6 +215,8 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			cout << "1-3\t\t turn on/off the red/blue/green directional lights" << endl;
 			cout << "4-5\t\t turn on/off two point lights" << endl;
 			cout << "6\t\t turn on/off the spot light" << endl;
+			cout << "7\t\t Change the rotation speed of the point light by -1 radian per sec according to the x-axis" << endl;
+			cout << "8\t\t Change the rotation speed of the point light by 1 radian per sec according to the x-axis" << endl;
 			break;
 		case GLFW_KEY_O:
 			g_nodes_index += 1;
@@ -297,6 +305,12 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 				(&surround[i])->Switch(5);
 			}
 			break;
+		case GLFW_KEY_7:
+			light_speed -= 1.0f;
+			break;
+		case GLFW_KEY_8:
+			light_speed += 1.0f;
+			break;
 
 		default:
 			break;
@@ -371,6 +385,7 @@ int main(void)
 	GLuint outline_shader = LoadShaders("OutlineVertexShader.glsl", "OutlineFragmentShader.glsl");
 	GLuint line_shader = LoadShaders("LineVertexShader.glsl", "LineFragmentShader.glsl");
 	GLuint texture_shader = LoadShaders("TextureVertexShader.glsl", "TextureFragmentShader.glsl");
+
 
 	/*
 	* Node configuration
@@ -472,7 +487,7 @@ int main(void)
 	// 4.
 	root.UpdateObjectFrame();
 
-	mat4 test_m = scale(vec3(10.0, 10.0, 10.0));
+	mat4 test_m = scale(vec3(12.0, 12.0, 12.0));
 
 	mat4 surround_m[6];
 	// Walls
@@ -550,6 +565,34 @@ int main(void)
 
 	// now we have to set texture for each texture model.
 
+	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
+
+	/* 
+	glGenFrameBuffers(1, &depthMapFBO);
+	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+
+	GLuint depthCubemap;
+	glGenTextures(1, &depthCubemap);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
+	for (unsigned int i = 0; i < 6; ++i)
+		glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_DEPTH_COMPONENT,
+			SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+	
+	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthCubemap, 0);
+
+	
+	glDrawBuffer(GL_NONE);
+	glReadBuffer(GL_NONE);
+
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+	*/
 
 	double prev_time = glfwGetTime();
 
@@ -570,43 +613,71 @@ int main(void)
 			g_nodes[i]->ApplyRotation((float)elapsed_time);
 		}
 
+		lightPos = mat3(vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, cos(light_speed * elapsed_time), sin(light_speed * elapsed_time)), vec3(0.0f, -sin(light_speed * elapsed_time), cos(light_speed * elapsed_time))) * lightPos;
+		/* 
+		float near_plane = 0.1f;
+		float far_plane = 100.0f;
+
+		// for point light, perspective projection is required
+		glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)SHADOW_WIDTH / (float)SHADOW_HEIGHT, near_plane, far_plane);
+		std::vector<glm::mat4> shadowTransforms;
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f)));
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f)));
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
+		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
+
+		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+		glClear(GL_DEPTH_BUFFER_BIT);
+		for (int i = 0; i < g_nodes.size(); i++) {
+			g_nodes[i]->SetDepth(shadowTransforms, far_plane, lightPos);
+		}
+		for (int i = 0; i < 6; i++) {
+			surround[i].SetDepth(shadowTransforms, far_plane, lightPos);
+		}
+		// renderScene(simpleDepthShader);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		*/
 		//render_to_texture.BindFBO();
 		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearStencil(0);
 
 		// 5. Draw
-		glStencilMask(0x00);
+		//glStencilMask(0x00);
 		for (int i = 0; i < 6; i++) {
 			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
-			surround[i].Draw();
+			surround[i].Draw(lightPos);
 		}
 		// TODO: HW3: should we control stencil buffer on this ? Yes.
 		// For example, add a parameter for Draw() function as Draw(int) to recognize whether or not the scaled version should be drawn.
 
-		// HW3: Enable stencil buffer for the original objects 
+		
 
-		glCullFace(GL_FRONT);
-		for (int i = 0; i < g_nodes.size(); i++) {
-			g_nodes[i]->Draw(1);
-		}
-		glCullFace(GL_BACK);
-
-		glStencilFunc(GL_ALWAYS, 1, 0xFF);
-		glStencilMask(0xFF);
+		//glStencilFunc(GL_ALWAYS, 1, 0xFF);
+		//glStencilMask(0xFF);
 		for (int i = 0; i < g_nodes.size(); i++)
 		{
 			if (i == g_nodes_index)
 			{
 				glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-				g_nodes[i]->Draw(0);
+				g_nodes[i]->Draw(0, lightPos);
 				glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 			}
 			else
 			{
-				g_nodes[i]->Draw(0);
+				g_nodes[i]->Draw(0, lightPos);
 			}
 		}
+
+		// Outlining
+		glCullFace(GL_FRONT);
+		for (int i = 0; i < g_nodes.size(); i++) {
+			g_nodes[i]->Draw(1, lightPos);
+		}
+		glCullFace(GL_BACK);
 		// HW3: Disable stencil buffer and depth test for the scaled objects
 		/*
 		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
@@ -634,6 +705,7 @@ int main(void)
 	glDeleteProgram(diffuse_shader);
 	glDeleteProgram(line_shader);
 	glDeleteProgram(texture_shader);
+	glDeleteProgram(outline_shader);
 
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();

@@ -24,10 +24,12 @@ public:
 	void AddColor(float a_r, float a_g, float a_b);
 	// Add vertex color in (r,g,b) glm vector 
 	void AddColor(vec3 a_color);
+
+	//void SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos);
 	// Set a shader program for this model and transfer data to vertex buffers 
 	void InitializeGLSL(DRAW_TYPE a_draw_type);
 	// Draw function
-	void Draw(void);
+	void Draw(vec3 lightPos);
 	// Clean up all resources
 	void CleanUp(void);
 };

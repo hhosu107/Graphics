@@ -38,10 +38,11 @@ public:
 	void SetColorTexture(const char* name);
 	// Get Texture
 	Texture* GetTexture();
+	//void SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos);
     // Set a shader program for this model and transfer data to vertex buffers 
 	void InitializeGLSL(DRAW_TYPE a_draw_type);
 	// Draw function
-	void Draw(void);
+	void Draw(vec3 lightPos);
 	// Clean up all resources
 	void CleanUp(void);
 };

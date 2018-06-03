@@ -30,7 +30,12 @@ void LineModel::InitializeGLSL(DRAW_TYPE a_type)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vec3)*m_positions.size(), &m_positions[0], GL_STATIC_DRAW);
 }
 
-void LineModel::Draw(void)
+/* void LineModel::SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos) {
+	;
+}
+*/
+
+void LineModel::Draw(vec3 lightPos = vec3(0.0f, -3.0f, 3.0f))
 {
 	glUseProgram(m_glsl_program_id);
 	GLint projection_id = glGetUniformLocation(m_glsl_program_id, "Projection");
