@@ -30,6 +30,7 @@ void LineModel::InitializeGLSL(DRAW_TYPE a_type)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vec3)*m_positions.size(), &m_positions[0], GL_STATIC_DRAW);
 }
 
+// For lines, shadow is not needed, but it would be declared although it won't work nothing.
 /* void LineModel::SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos) {
 	;
 }

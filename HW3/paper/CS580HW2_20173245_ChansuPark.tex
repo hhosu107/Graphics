@@ -82,7 +82,7 @@
 \begin{center}
 \textbf{CS580}
 
-Spring 2018, Homework \#2
+Spring 2018, Homework \#3
 \end{center}
 }
 
@@ -91,124 +91,62 @@ Spring 2018, Homework \#2
 % -----------------------------------------------------------------------------
 %             Template for typing up an Exercise
 % -----------------------------------------------------------------------------
-Here is the sample image only with point lights and a spotlight:
+Here is the sample image of my work:
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[width=0.8\linewidth]{pointSpot.png}
+		\includegraphics[width=0.8\linewidth]{gooch.png}
 	\end{center}
-	\caption{A sample picture with point lights and a spotlight. Note that there is also an ambient light.}
+	\caption{A sample picture with a point light with both gooch shading and toon shading. Outlines are seen in the scene.}
 \end{figure}
 
-\section{Lighting} \label{sec:1}
-There are three components of the local lighting: ambient, diffuse, and specular.
-Ambient light exists as a constant factor; diffuse/specular light depends on each material.
+\section{Scene Setting} \label{sec:1}
+Actually, I didn't introduce new complex mesh object.
 
-To simplify, I fixed diffuse factor $K_d$ as $0.4$; specular factor $K_s$ as $0.6$.
-\newpage
-\subsection{vertex shader} \label{ssec:1.1}
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=0.8\linewidth]{vertexshader.png}
-	\end{center}
-	\caption{Vertex shader. (VertexShader.glsl / TextureVertexShader.glsl)}
-\end{figure}
-The main problem on the original vertex shader (from the tutorial 2 of the CS580) was that the position of the fragment is clipped and then move on to the fragment shader.
-Since the projection to the clip space from the view is not an affine transformation, it makes the light curved on the clip space.
+I also didn't visualize the position of the point light, but made it moving around $x$-axis. You can adjust the speed of the rotation of the point light using 7 and 8 on you keyboard.
 
-Thus we have to take care the light before we clip the space to the canonical view volume, so I worked on the world coordinate for lighting.
-Multiplying by model transform and multipliying by the inverse of the model transformation move each position and normal vector from the model to the space, respectively.
-Then the vertex shader gives these two information to the fragment shader.
-
-Note that, for the texture, the last line will be changed to \texttt{fragmentUV=vertex\_uv;}.
-
-\subsection{fragment shader} \label{ssec:1.2}
-Fragment shader takes five information from the vertex shader: fragment color (fragment parameter for the texture), fragment position(clip space / world space), and fragment normal(clip space / world space).
-
-It also takes several uniform variables:
+\section{Non-Photorealistic Rendering} \label{sec:2}
+\subsection{Rendering Style} \label{ssec:2.1}
+I applied two types of shading methods: Gooch Shading and Toon Shading.
 \begin{itemize}
-	\item [directional lights:] light vector (already inversed), color
-	\item [point lights:] position of the light point, color, attenuation terms
-	\item [spot light:] variables that the point light takes + center direction of the light, angle of the cone of the spot light
-	\item [transformations:] Model to world (ModelTransform), world to view (Eye), projection (Projection)
-	\item [light switches:] \texttt{light[6]}: Turn on/off each lights
-	\item [alpha:] surface smoothness
-	\item [diffuse, specular:] \texttt{d, s}: constants for diffuse/specular term
-	\item [blinn:] switches between Phong model and Blinn-Phong model.
+	\item [Gooch:] Gooch shading is the method that computes the color using linear interpolation of `warm' color and `cool' color.
+	To generate the warm color and cool color, it takes two base colors (call $c_{warm}$ and $c_{cool}$) and the diffuse reflectance (call $c_{point}$) of the point on the model.
+	\[k_{warm} = c_{warm} + \alpha c_{point}; \qquad k_{cool} = c_{cool} + \beta c_{point}; \] \[0 \leq \alpha, \beta \leq 1, (0,0,0) \leq k_{warm}, k_{cool} \leq (1,1,1).\]
+	The interpolating factor is computed using dot product of the light vector and the surface normal. The resulting color is following:
+	\[I = \frac{1 + \vec{l} \cdot \vec{n}}{2} k_{cool} + \frac{1 - \vec{l} \cdot \vec{n}}{2} k_{warm}.\]
+	I used different base colors for objects and walls: $k_{cool} = (0,0.7,0), k_{warm} = (0.6, 0, 0.6)$ for objects; $k_{cool} = (0, 0.5, 0), k_{warm} = (0.4, 0, 0.7)$ for walls.
+	\item [Toon:]
+	Then I discretized colors to enable Toon shading using the same interpolating factor used for Gooch shading.
+	Note that, since the light is contained in the walls, I used different discretizing criteria for walls from objects.
+	\begin{figure}[htb]
+		\begin{center}
+			\includegraphics[width=0.6\linewidth]{goochtexture.png}
+		\end{center}
+		\caption{Gooch shading for textured objects (in this case, walls). Note that I finally inserted attenuation term.}
+	\end{figure}
 \end{itemize}
-There are three functions for each lights: \texttt{directionalLight, pointLight, spotLight} which take fragment normal vector and view vector from the fragment to the camera in common: each according to the world coordinate, and an instance of each light type.
-\subsubsection{directional light} \label{sssec:1.2.1}
+\subsection{Outlining} \label{ssec:2.2}
+There are several outlining methods, but since I planned to use shadow map, geometry information was not needed. Thus I just used enlarged models and culled front faces.
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[width=0.7\linewidth]{directional.png}
+		\includegraphics[width=0.7\linewidth]{scaledModel.png}
 	\end{center}
-	\caption{Code for the directionalLight function.}
+	\caption{For each model, I attached scaled model at the same location. These models will have almost black colors.}
 \end{figure}
-Compute the normalized light vector; compute diffuse and specular intensity according to Blinn-Phong or Phong model; then add them with diffuse/specular coefficient. No attenuation term is needed since it is directional light.
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[width=0.5\linewidth]{judgeOutline.png}
+	\end{center}
+	\caption{Each nodes draws the actual model or the outline according to the first argument they receive.}
+\end{figure}
+
 \newpage
-\subsubsection{point light} \label{sssec:1.2.2}
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=1.0\linewidth]{point.png}
-	\end{center}
-	\caption{Code for the pointLight function.}
-\end{figure}
-Compute the normalized light vector; compute diffuse and specular intensity according to Blinn-Phong or Phong model; then add them with diffuse/specular coefficient and the attenuation term.
-\subsubsection{spot light} \label{sssec:1.2.3}
-It is almost the same as the point light, but the caller \texttt{main()} restricts the computation with the angle between the center direction of the light and the view vector.
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=1.0\linewidth]{main.png}
-	\end{center}
-	\caption{Main function of the fragment shader (FragmentShader/TextureFragmentShader.glsl).}
-\end{figure}
-
-The main function of the fragment shader first initialize the light with the ambient term and then add lights, and finally apply the gamma correction on the product of the fragment color (texture color for the texture fragment shader) and the intensity.
-
-Note that, I didn't use \texttt{light.cpp/light.hpp}. Instead, I gave the information for each fragment on the \texttt{textureModel/colorModel.cpp}. You can see that in the \texttt{Draw()} function. Here are the information for each light source (each points / vectors are on the world coordinate):
-\begin{itemize}
-	\item[directional lights:] Light vector: (1,1,1) with color Red/Blue/Green
-	\item[point lights:] attenuation: 1 for constant; 0.1 for the linear term; 0.1 for the quadratic term.
-	\begin{itemize}
-		\item [(i)] Light position: (2, 3, -2) / Color: (0.8, 0, 0.8).
-		\item [(ii)] Light Position: (0, -3, 3) / Color: (0.25, 0.75, 0.25).
-	\end{itemize}
-	\item[spot light:] attenuation: (1, 0, 0.01), Light Position: (-1, -4, 10), Light direction (central vector of the spotlight): (0.1, 0.2, -1), cone angle: \texttt{atan(0.3)}.
-\end{itemize}
-
-I also mapped keys: B-button for the switch between Blinn-Phong/Phong Model, 1~6 buttons for switching lights.
-
-\section{Texture Mapping for wall and floor} \label{sec:2}
-Setting texture is similar to create texture for Render-to-Texture mapping introduced in the tutorial 2. Thus I implemented \texttt{SetTexture(const char *name)} which takes the relative location and then attach that image at the location as a texture to the surface.
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=0.7\linewidth]{rttSetTexture.png}
-	\end{center}
-	\caption{Similar to the \texttt{CreateTexture} method, but it uses SOIL library.}
-\end{figure}
-First, it reads the image as an unsigned byte array using SOIL library, and then attach it with a certain \texttt{texture\_id}.
-\newpage
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=1.0\linewidth]{mainSurround.png}
-	\end{center}
-	\caption{Generate \texttt{TextureModel} instance for the geometry, and make an \texttt{RTT} instance.}
-\end{figure}
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[width=0.8\linewidth]{directionalLight.png}
-	\end{center}
-	\caption{Since the normal vector for the ceiling and the right wall has more than 90 degree with the directional light, they wouln't be affected: compare with figure 1.}
-\end{figure}
-
-\section{Creativity} \label{sec:3}
-The lighting method switching (Blinn-Phong / Phong) is the only one that I implemented more.
-\newpage
+\section{Shadow} \label{sec:3}
+I tried to implement shadow mapping, but I didn't finish that since it required depth cubemap which was quite complex to set.
 
 \section{Directory hierarchy}
 I worked on \texttt{Visual Studio 2015 Professional Win64}.
 
-This time, I attached the whole sources from the skeleton zip file since I edited several files.
+I attached the whole sources from the skeleton zip file since I edited several files.
 
 You can see the images I used for textures in the \texttt{./Resources/images/}.
 

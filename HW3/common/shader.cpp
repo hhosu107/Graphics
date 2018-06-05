@@ -107,6 +107,7 @@ GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_pat
 	return ProgramID;
 }
 
+// Plan to add geometry shader for shadow mapping
 GLuint LoadShaders(const char * vertex_file_path, const char * fragment_file_path, const char * geometry_file_path) {
 
 	// Create the shaders

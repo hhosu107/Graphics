@@ -78,54 +78,6 @@ mat4 NormalMatrix(mat4 MVM)
 	return transpose(invm);
 }
 
-// Assume that the constant for the ambient light is equal to the constant for the diffuse light.
-vec3 directionalLight(Directional light, vec3 normal, vec3 viewDirection){
-	// light vector
-	vec3 lightDirection = normalize(light.dir); 
-	float spec;
-	
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0); 
-	if(blinn == 1){
-		vec3 halfVec = normalize(lightDirection + viewDirection);
-		spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); 
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha);
-	}
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse + specular);
-}
-
-/*
-vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
-	// imagine that the eye is located at the fragment and see the point light directly (world space)
-	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
-	float spec;
-	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
-	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
-
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0);
-	if(blinn == 1){
-	vec3 halfVec = normalize(lightDirection + viewDirection);
-	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
-	}
-	// light computation with attenuation
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse * attenuation + specular * attenuation);
-}
-*/
-
 vec3 pointLight(Point light, vec3 normal, vec3 viewDirection, vec3 textureColor){
 	// imagine that the eye is located at the fragment and see the point light directly (world space)
 	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
@@ -133,9 +85,6 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection, vec3 textureColor)
 	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
 	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
 
-	// diffuse and specular
-	// HW2: phong(blinn-phong) shading
-	// float diff = max(dot(normal, lightDirection), 0.0);
 	// HW3: Gooch Shading
 	float diff = (1.0 + dot(normal, lightDirection))/2;
 	
@@ -151,59 +100,19 @@ vec3 pointLight(Point light, vec3 normal, vec3 viewDirection, vec3 textureColor)
 	else if(diff >= 0.72){
 		diff = 0.25;
 	}
-	else diff = 0;
+	else diff = 0.05;
 	
-	/* HW2: phong(blinn-phong) shading
-	if(blinn == 1){
-	vec3 halfVec = normalize(lightDirection + viewDirection);
-	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
-	}
-	
-	// light computation with attenuation
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse * attenuation + specular * attenuation);
-	*/
 	// HW3: Gooch shading
 	// cool color mixed with color of the object
 	// vec3 coolColorMod = coolColor + fragmentColor * alpha;
 	vec3 coolColorMod = vec3(0.0, 0.5, 0.0) + textureColor * 0.5;
     // warm color mixed with color of the object
 	// vec3 warmColorMod = warmColor + fragmentColor * beta;
-    vec3 warmColorMod = vec3(0.6, 0.0, 0.7) + textureColor * 0.3;
+    vec3 warmColorMod = vec3(0.4, 0.0, 0.7) + textureColor * 0.3;
     // interpolation of cool and warm colors according 
     // to lighting intensity. The lower the light intensity,
     // the larger part of the cool color is used
     return attenuation * mix(coolColorMod, warmColorMod, diff);
-}
-
-vec3 spotLight(Spot light, vec3 normal, vec3 viewDirection){
-	// imagine that the eye is located at the fragment and see the point light directly (world space)
-	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
-	float spec;
-	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
-	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
-
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0);
-	if(blinn == 1){
-	vec3 halfVec = normalize(lightDirection + viewDirection);
-	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
-	}
-	// light computation with attenuation
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse * attenuation + specular * attenuation);
 }
 
 void main(){
@@ -214,25 +123,9 @@ void main(){
 	vec3 viewDirection = -normalize((inverse(Eye) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - fragmentWorldPosition);
 	// color by directional light
 	vec3 intensity = vec3(0.01, 0.01, 0.01); // ambient term initialization
-	/* 
-	for(int i=0; i<3; i++){
-		intensity = intensity + (light[i]) * directionalLight(directional[i], normal, viewDirection);
-	}
-	// color by point light
-	for(int i=0; i<2; i++){
-		intensity = intensity + (light[3+i]) * pointLight(point[i], normal, viewDirection);
-	}
-	// color by spot light
-	vec3 spotDirection = normalize(spot.pos - fragmentWorldPosition);
-	if(acos(dot(-spotDirection, normalize(spot.dir))) < spot.cutoff){
-		intensity = intensity + (light[5]) * spotLight(spot, normal, viewDirection);
-	}
-	*/
 	
 	// HW3: Gooch Shading
 	vec3 textureColor = texture(tex, fragmentUV).xyz; // texture's real color
 	intensity = pointLight(point[1], normal, viewDirection, textureColor);
 	color = intensity;
-	// color = textureColor;
-	// color = pow(textureColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
 }

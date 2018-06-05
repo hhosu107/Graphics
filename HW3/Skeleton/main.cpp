@@ -199,8 +199,7 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 		case GLFW_KEY_H:
 			cout << "CS580 Homework Assignment 1" << endl;
 			cout << "keymaps:" << endl;
-			cout << "h\t\t Help command" << endl;/*
-			cout << "p\t\t Enable/Disable picking" << endl;*/
+			cout << "h\t\t Help command" << endl;
 			cout << "o\t\t Pick the next object" << endl;
 			cout << "n\t\t Change the rotation speed of the current object by -10 degree per sec according to the local y-axis" << endl;
 			cout << "m\t\t Change the rotation speed of the current object by 10 degree per sec according to the local y-axis" << endl;
@@ -211,10 +210,6 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 			cout << "right button\t\t move the eye by 1 along x-axis" << endl;
 			cout << "left bracket\t\t move the eye by -1 along z-axis" << endl;
 			cout << "right bracket\t\t move the eye by 1 along z-axis" << endl;
-			cout << "b\t\t switch between blinn-phong and phong lighting" << endl;/*
-			cout << "1-3\t\t turn on/off the red/blue/green directional lights" << endl;
-			cout << "4-5\t\t turn on/off two point lights" << endl;
-			cout << "6\t\t turn on/off the spot light" << endl;*/
 			cout << "7\t\t Change the rotation speed of the point light by -1 radian per sec according to the x-axis" << endl;
 			cout << "8\t\t Change the rotation speed of the point light by 1 radian per sec according to the x-axis" << endl;
 			break;
@@ -249,62 +244,6 @@ static void KeyboardCallback(GLFWwindow* a_window, int a_key, int a_scancode, in
 		case GLFW_KEY_RIGHT_BRACKET:
 			g_eye_rbt = translate(vec3(0.0f, 0.0f, 1.0f)) * g_eye_rbt;
 			break;
-		case GLFW_KEY_B:
-			for(int i=0; i<g_nodes.size(); i++){
-				g_nodes[i]->BlinnSwitch();
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->BlinnSwitch();
-			}
-			break;/*
-		case GLFW_KEY_1:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(0);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(0);
-			}
-			break;
-		case GLFW_KEY_2:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(1);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(1);
-			}
-			break;
-		case GLFW_KEY_3:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(2);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(2);
-			}
-			break;
-		case GLFW_KEY_4:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(3);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(3);
-			}
-			break;
-		case GLFW_KEY_5:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(4);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(4);
-			}
-			break;
-		case GLFW_KEY_6:
-			for (int i = 0; i < g_nodes.size(); i++) {
-				g_nodes[i]->LightSwitch(5);
-			}
-			for (int i = 0; i < 6; i++) {
-				(&surround[i])->Switch(5);
-			}
-			break;*/
 		case GLFW_KEY_7:
 			light_speed -= 1.0f;
 			break;
@@ -417,7 +356,7 @@ int main(void)
 	}
 
 	// 3.
-	// HW3: To enable outlining, copy each model, scale them by 1.02, use different shader, and then draw them with stencil masking.
+	// HW3: To enable outlining, copy each model, scale them by 1.05, use different shader, and then draw them with stencil masking.
 	// TODO: Change definitions in node.cpp to adjust InitialChildrenFrame: attach at the same relative location for scaled models
 	ColorModel r_m1 = ColorModel();
 	AddColorModel(r_m1, diffuse_shader, CUBE, vec3(1.0f, 1.0f, 0.0f));
@@ -563,36 +502,8 @@ int main(void)
 	surround_rtt[5] = RTT();
 	surround_rtt[5].SetTexture("../Resources/images/sky.png");
 
-	// now we have to set texture for each texture model.
-
+	// Preparing shadow map array
 	const unsigned int SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;
-
-	/* 
-	glGenFrameBuffers(1, &depthMapFBO);
-	glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
-
-	GLuint depthCubemap;
-	glGenTextures(1, &depthCubemap);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
-	for (unsigned int i = 0; i < 6; ++i)
-		glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_DEPTH_COMPONENT,
-			SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
-
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-	
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthCubemap, 0);
-
-	
-	glDrawBuffer(GL_NONE);
-	glReadBuffer(GL_NONE);
-
-	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-	*/
 
 	double prev_time = glfwGetTime();
 
@@ -614,33 +525,7 @@ int main(void)
 		}
 
 		lightPos = mat3(vec3(1.0f, 0.0f, 0.0f), vec3(0.0f, cos(light_speed * elapsed_time), sin(light_speed * elapsed_time)), vec3(0.0f, -sin(light_speed * elapsed_time), cos(light_speed * elapsed_time))) * lightPos;
-		/* 
-		float near_plane = 0.1f;
-		float far_plane = 100.0f;
-
-		// for point light, perspective projection is required
-		glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), (float)SHADOW_WIDTH / (float)SHADOW_HEIGHT, near_plane, far_plane);
-		std::vector<glm::mat4> shadowTransforms;
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f)));
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f)));
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
-		shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, -1.0f, 0.0f)));
-
-		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
-		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
-		glClear(GL_DEPTH_BUFFER_BIT);
-		for (int i = 0; i < g_nodes.size(); i++) {
-			g_nodes[i]->SetDepth(shadowTransforms, far_plane, lightPos);
-		}
-		for (int i = 0; i < 6; i++) {
-			surround[i].SetDepth(shadowTransforms, far_plane, lightPos);
-		}
-		// renderScene(simpleDepthShader);
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		*/
-		//render_to_texture.BindFBO();
+		
 		glClearColor((GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f, (GLclampf)1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		glClearStencil(0);
@@ -651,13 +536,6 @@ int main(void)
 			surround[i].SetColorTexture(surround_rtt[i].GetTexture());
 			surround[i].Draw(lightPos);
 		}
-		// TODO: HW3: should we control stencil buffer on this ? Yes.
-		// For example, add a parameter for Draw() function as Draw(int) to recognize whether or not the scaled version should be drawn.
-
-		
-
-		//glStencilFunc(GL_ALWAYS, 1, 0xFF);
-		//glStencilMask(0xFF);
 		for (int i = 0; i < g_nodes.size(); i++)
 		{
 			if (i == g_nodes_index)
@@ -672,23 +550,12 @@ int main(void)
 			}
 		}
 
-		// Outlining
+		// Outlining with front-face culling
 		glCullFace(GL_FRONT);
 		for (int i = 0; i < g_nodes.size(); i++) {
 			g_nodes[i]->Draw(1, lightPos);
 		}
 		glCullFace(GL_BACK);
-		// HW3: Disable stencil buffer and depth test for the scaled objects
-		/*
-		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-		glStencilMask(0x00);
-		glDisable(GL_DEPTH_TEST);
-		for (int i = 0; i < g_nodes.size(); i++) {
-			g_nodes[i]->Draw(1);
-		}
-		glStencilMask(0xFF);
-		glEnable(GL_DEPTH_TEST);
-		*/
 
 		// Swap buffers
 		glfwSwapBuffers(g_window);

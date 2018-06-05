@@ -211,7 +211,7 @@ ASSIMP_OPT_BUILD_PACKAGES:BOOL=OFF
 ASSIMP_PACKAGE_VERSION:STRING=0
 
 //Was gtest setup correctly?
-AddGTest_FOUND:BOOL=true
+AddGTest_FOUND:BOOL=ON
 
 //Value Computed by CMake
 Assimp_BINARY_DIR:STATIC=E:/Gits/Graphics/HW3/build/ExternalProjects/assimp-3.3.1
@@ -402,10 +402,10 @@ CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
 //If set, runtime paths are not added when installing shared libraries,
 // but are added when building.
-CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
+CMAKE_SKIP_INSTALL_RPATH:BOOL=OFF
 
 //If set, runtime paths are not added when using shared libraries.
-CMAKE_SKIP_RPATH:BOOL=NO
+CMAKE_SKIP_RPATH:BOOL=OFF
 
 //Flags used by the linker during the creation of static libraries
 // during all build types.
@@ -431,7 +431,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
-CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+CMAKE_VERBOSE_MAKEFILE:BOOL=OFF
 
 //Value Computed by CMake
 CS580_BINARY_DIR:STATIC=E:/Gits/Graphics/HW3/build
@@ -467,10 +467,10 @@ DirectX_DXGI_LIBRARY:FILEPATH=C:/Program Files (x86)/Windows Kits/8.1/Lib/winv6.
 DirectX_DXGUID_LIBRARY:FILEPATH=C:/Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64/dxguid.lib
 
 //x
-DirectX_INCLUDE_DIR:PATH=C:/Program Files (x86)/Windows Kits/8.1/Include/shared
+DirectX_INCLUDE_DIR:PATH=DirectX_INCLUDE_DIR-NOTFOUND
 
 //x
-DirectX_LIBRARY:FILEPATH=C:/Program Files (x86)/Windows Kits/8.1/Lib/winv6.3/um/x64/d3d9.lib
+DirectX_LIBRARY:FILEPATH=DirectX_LIBRARY-NOTFOUND
 
 //Single output directory for building all executables.
 EXECUTABLE_OUTPUT_PATH:PATH=

@@ -76,97 +76,12 @@ mat4 NormalMatrix(mat4 MVM)
 	return transpose(invm);
 }
 
-vec3 directionalLight(Directional light, vec3 normal, vec3 viewDirection){
-	// light vector
-	vec3 lightDirection = normalize(light.dir); 
-	float spec;
-	
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0); 
-	if(blinn == 1){
-		vec3 halfVec = normalize(lightDirection + viewDirection);
-		spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); 
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha);
-	}
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse + specular);
-}
-
-vec3 pointLight(Point light, vec3 normal, vec3 viewDirection){
-	// imagine that the eye is located at the fragment and see the point light directly (world space)
-	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
-	float spec;
-	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
-	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
-
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0);
-	if(blinn == 1){
-	vec3 halfVec = normalize(lightDirection + viewDirection);
-	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
-	}
-	// light computation with attenuation
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse * attenuation + specular * attenuation);
-}
-
-vec3 spotLight(Spot light, vec3 normal, vec3 viewDirection){
-	// imagine that the eye is located at the fragment and see the point light directly (world space)
-	vec3 lightDirection = normalize(light.pos - fragmentWorldPosition);
-	float spec;
-	float dist = length(light.pos - fragmentWorldPosition); // distance on the world space
-	float attenuation = 1.0f / (light.a + light.b * dist + light.c * dist * dist); // attenuation factor
-
-	// diffuse and specular
-	float diff = max(dot(normal, lightDirection), 0.0);
-	if(blinn == 1){
-	vec3 halfVec = normalize(lightDirection + viewDirection);
-	spec = pow(max(dot(normal, halfVec), 0.0), material.alpha);
-	}
-	else{
-	vec3 reflection = reflect(-lightDirection, normal); // according to phong model
-	spec = pow(max(dot(viewDirection, reflection), 0.0), material.alpha); // = (reflection \cdot viewDirection)^{alpha}
-	}
-	// light computation with attenuation
-	vec3 diffuse, specular;
-	diffuse = d * diff * light.color;
-	specular = s * spec * light.color;
-	return (diffuse * attenuation + specular * attenuation);
-}
-
 void main(){
 	// fragment normal on world space
 	vec3 normal = normalize(fragmentWorldNormal);
 	// fragment view direction on world space: first represent the eye on the world coordinate and then compute the view vector
 	vec3 viewDirection = -normalize((inverse(Eye) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - fragmentWorldPosition); 
 	// color by directional light
-	vec3 intensity = vec3(0.04, 0.04, 0.04); // ambient term initialization
-	/* HW2: phong(blinn-phong) shading
-	for(int i=0; i<3; i++){
-		intensity = intensity + (light[i]) * directionalLight(directional[i], normal, viewDirection);
-	}
-	// color by point light
-	for(int i=0; i<2; i++){
-		intensity = intensity + (light[3+i]) * pointLight(point[i], normal, viewDirection);
-	}
-	// color by spot light
-	vec3 spotDirection = normalize(spot.pos - fragmentWorldPosition);
-	if(acos(dot(-spotDirection, normalize(spot.dir))) < spot.cutoff){
-		intensity = intensity + (light[5]) * spotLight(spot, normal, viewDirection);
-	}
-	color = pow(fragmentColor * intensity, vec3(1.0/2.2)); // Apply gamma correction
-	*/
-	//intensity = pointLight(point[1], normal, viewDirection);
+	vec3 intensity = vec3(0.04, 0.04, 0.04); // Outline as black
 	color = intensity;
 }

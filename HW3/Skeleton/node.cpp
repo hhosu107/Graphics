@@ -79,13 +79,13 @@ void Node::ApplyRotation(float elasped_time)
 
 void Node::LightSwitch(int i) // Turn on/off such light
 {
-	for(int j=0; j<m_models.size(); j++)
+	for(int j=0; j<m_models.size(); j+=2)
 		(m_models[j])->Switch(i);
 }
 
 void Node::BlinnSwitch(void) // Blinn-phong or phong
 {
-	for (int j = 0; j < m_models.size(); j++)
+	for (int j = 0; j < m_models.size(); j+=2)
 		(m_models[j])->BlinnSwitch();
 }
 
@@ -134,6 +134,7 @@ void Node::UpdateObjectFrame(void)
 	}
 }
 
+// Planning to set depth buffer for shadow mapping
 void Node::SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos) {
 /* 	for (int i = 0; i < m_models.size(); i += 2) {
 		m_models[i]->SetDepth(shadowTransforms, far_plane, lightPos);

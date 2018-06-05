@@ -76,24 +76,16 @@ void TextureModel::SetColorTexture(const char* name)
 	m_color_texture->SetTexture(name);
 }
 
-Texture* TextureModel::GetTexture() 
+Texture* TextureModel::GetTexture()
 {
 	return m_color_texture;
 }
 
+// Planning to set depth buffer for shadow mapping
 /* void TextureModel::SetDepth(vector<mat4> shadowTransforms, float far_plane, vec3 lightPos) {
-	vector<string> shadowTransformStr = vector<string>();
-	for (int i = 0; i < 6; i++) {
-		shadowTransformStr.push_back("shadowTransforms[" + to_string(i) + "]");
-	}
-	for (int i = 0; i < 6; i++) {
-		glUniformMatrix4fv(glGetUniformLocation(m_glsl_program_id, shadowTransformStr[i].c_str()), 1, GL_FALSE, &shadowTransforms[i][0][0]);
-	}
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "far_plane"), far_plane);
-	glUniform3fv(glGetUniformLocation(m_glsl_program_id, "lightPos"), 1, &lightPos[0]);
+;
 }
 */
-
 
 void TextureModel::Draw(vec3 lightPos = vec3(0.0f, -3.0f, 3.0f))
 {
@@ -138,11 +130,12 @@ void TextureModel::Draw(vec3 lightPos = vec3(0.0f, -3.0f, 3.0f))
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].b"), 0.1f);
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[0].c"), 0.1f);
 
+	// get the moving light source
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].pos"), lightPos.x, lightPos.y, lightPos.z);
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "point[1].color"), 1.0f, 1.0f, 1.0f);
 
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].a"), 1.0f);
-	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].b"), 0.0f);
+	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].b"), 0.01f);
 	glUniform1f(glGetUniformLocation(m_glsl_program_id, "point[1].c"), 0.01f);
 
 	glUniform3f(glGetUniformLocation(m_glsl_program_id, "spot.pos"), -1.0f, -4.0f, 10.0f);

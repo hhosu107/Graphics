@@ -18,8 +18,8 @@ class Model {
 protected:
 	vector<vec3> m_positions;
 	vector<unsigned int> m_indices;
-	int m_lights[6] = { 0,0,0,0,0,0 };
-	int blinn = 1;
+	int m_lights[6] = { 1,1,1,1,1,1 };
+	int blinn = 0;
 
 	mat4* m_projection;
 	mat4* m_eye_rbt;
